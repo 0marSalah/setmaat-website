@@ -1,0 +1,46 @@
+{
+  "founders": [
+    {
+      "name": "Dmitri Zagidulin",
+      "initials": "DZ",
+      "role": "Senior Engineer",
+      "bio": "Distributed systems engineer and authentication and credentials expert; Technical Architect for the DCC, contributing to core decentralization libraries, open standards, and conference organization.",
+      "photo": "/members/dmitri-zagidulin.jpg",
+      "links": []
+    },
+    {
+      "name": "Omar Salah",
+      "initials": "OS",
+      "role": "Software Engineer",
+      "bio": "Full-stack engineer specializing in web applications and backend systems; contributing to open-source projects in decentralized identity, digital wallets, verifiable credentials, and distributed storage.",
+      "photo": "/members/omar-salah.jpg",
+      "links": []
+    },
+    {
+      "name": "[FOUNDER NAME]",
+      "initials": "C",
+      "role": "[Role, e.g. Co-founder · Community]",
+      "bio": "[Three or four lines: their background, what they lead at SetMaat, and why they started the co-op.]",
+      "photo": "",
+      "links": [
+        { "label": "LinkedIn", "url": "#" }
+      ]
+    }
+  ],
+  "advisors": [
+    {
+      "name": "[ADVISOR NAME]",
+      "initials": "D",
+      "role": "[Expertise, e.g. AI research]",
+      "bio": "[One or two lines: who they are and what they advise on.]",
+      "photo": ""
+    },
+    {
+      "name": "[ADVISOR NAME]",
+      "initials": "E",
+      "role": "[Expertise, e.g. co-op law]",
+      "bio": "[One or two lines: who they are and what they advise on.]",
+      "photo": ""
+    }
+  ]
+}

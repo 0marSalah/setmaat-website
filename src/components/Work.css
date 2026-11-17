@@ -1,0 +1,28 @@
+.work-list { display: flex; flex-direction: column; gap: 28px }
+.work { display: flex; flex-wrap: wrap; border: 2px solid var(--ink); background: var(--white) }
+
+/* Illustration panel; alternates sides on every other project */
+.work-art { flex: 1 1 380px; min-height: 340px; display: flex; align-items: center; justify-content: center; padding: 36px; border-right: 2px solid var(--ink); position: relative; overflow: hidden }
+.work:nth-child(even) .work-art { order: 2; border-right: 0; border-left: 2px solid var(--ink) }
+.work-art.lapis { background: var(--lapis) }
+.work-art.faience { background: var(--faience) }
+.work-art svg { width: 100%; max-width: 360px; height: auto; position: relative }
+.work-art .stars { opacity: .16 }
+
+.work-body { flex: 999 1 480px; min-width: 0; padding: 44px; display: flex; flex-direction: column; gap: 18px }
+.work-body .kicker { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--lapis) }
+.work-body h3 { font-size: clamp(48px, 5vw, 72px); line-height: .88; text-transform: none }
+.work-body .lead { font-size: 20px; line-height: 1.5; font-weight: 600; color: var(--ink) }
+.work-body p { font-size: 16px; line-height: 1.65; color: var(--ink-2) }
+.work-body ul.points { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px }
+.work-body ul.points li { display: flex; gap: 12px; font-size: 16px; line-height: 1.5; color: var(--ink-2) }
+.work-body ul.points li::before { content: ""; flex: 0 0 10px; height: 10px; margin-top: 7px; background: var(--gold); transform: rotate(45deg) }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px }
+.tags span { font-size: 13px; font-weight: 600; padding: 6px 10px; border: 2px solid var(--ink); background: var(--papyrus) }
+.work-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px }
+
+@media (max-width: 860px) {
+  .work-art, .work:nth-child(even) .work-art { order: 0; border-right: 0; border-left: 0; border-bottom: 2px solid var(--ink) }
+  .work-body { padding: 28px }
+}

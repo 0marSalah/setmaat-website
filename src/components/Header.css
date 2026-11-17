@@ -1,0 +1,20 @@
+header.site { position: sticky; top: 0; z-index: 10; background: var(--papyrus); border-bottom: 2px solid var(--ink) }
+.nav { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; padding-top: 16px; padding-bottom: 16px }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink) }
+.brand span { font-family: var(--display); font-weight: 900; font-size: 30px; letter-spacing: .01em; text-transform: none; line-height: 1 }
+.nav nav { display: flex; flex-wrap: wrap; gap: 26px; align-items: center; font-weight: 500; font-size: 15px }
+.nav nav a { text-decoration: none }
+.nav nav a:not(.btn) { color: var(--ink) }
+.nav nav a:not(.btn):hover { text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 3px; text-underline-offset: 6px }
+
+.menu-toggle { display: none }
+
+/* Narrow screens: collapse the links behind a Menu button so the sticky header stays one row tall. */
+@media (max-width: 860px) {
+  .menu-toggle { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 16px; border: 2px solid var(--ink); background: transparent; color: var(--ink); font: inherit; font-size: 15px; font-weight: 600; cursor: pointer }
+  .nav[data-menu-open="true"] .menu-toggle { background: var(--ink); color: var(--papyrus) }
+  .nav nav { display: none; flex: 1 1 100%; flex-direction: column; align-items: stretch; gap: 0; font-size: 18px; padding-bottom: 4px }
+  .nav[data-menu-open="true"] nav { display: flex }
+  .nav nav a:not(.btn) { display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid rgba(20, 22, 43, .14) }
+  .nav nav .btn { margin-top: 16px; font-size: 17px }
+}

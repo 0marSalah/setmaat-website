@@ -1,0 +1,44 @@
+.group-label { display: flex; align-items: center; gap: 16px; font-family: var(--display); font-weight: 800; font-size: 22px; letter-spacing: .08em; text-transform: uppercase; color: var(--lapis) }
+.group-label::after { content: ""; flex: 1; height: 2px; background: var(--ink) }
+.founders { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: -16px }
+.advisors { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; margin-top: -16px }
+
+.member { background: var(--white); border: 2px solid var(--ink); display: flex; flex-direction: column; gap: 18px; transition: transform .15s ease, box-shadow .15s ease }
+.member:hover { transform: translate(-3px, -3px); box-shadow: 6px 6px 0 var(--lapis) }
+
+/* Cartouche: the oval frame ancient Egyptians drew around names */
+.cartouche { flex: 0 0 auto; width: 84px; height: 112px; border: 3px solid var(--gold); border-radius: 42px; padding: 5px; position: relative; margin-bottom: 10px }
+.cartouche::after { content: ""; position: absolute; left: 10px; right: 10px; bottom: -11px; height: 5px; background: var(--gold) }
+.cartouche .face { width: 100%; height: 100%; border-radius: 36px; overflow: hidden; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 900; font-size: 34px; color: var(--papyrus); text-transform: uppercase; background: var(--lapis) }
+.cartouche img { width: 100%; height: 100%; object-fit: cover }
+.cartouche.big { width: 150px; height: 200px; border-radius: 75px; border-width: 4px; padding: 7px; margin-bottom: 14px }
+.cartouche.big .face { border-radius: 68px; font-size: 60px }
+.cartouche.big::after { bottom: -15px; height: 7px; left: 16px; right: 16px }
+.cartouche.small { width: 64px; height: 84px; border-radius: 32px; margin-bottom: 8px }
+.cartouche.small .face { border-radius: 28px; font-size: 30px }
+
+/* Founder cards */
+.founder { padding: 36px 32px; align-items: center; text-align: center }
+.founder h3 { font-size: 38px; line-height: .92 }
+.founder .role { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--lapis) }
+.founder p.bio { font-size: 16px; line-height: 1.6; color: var(--ink-2) }
+.founder .links { margin-top: auto; display: flex; gap: 18px; justify-content: center; font-size: 14px; font-weight: 600 }
+
+/* Advisor cards */
+.advisor { padding: 22px; flex-direction: row; align-items: flex-start; gap: 18px }
+.advisor > div { display: flex; flex-direction: column; gap: 6px; min-width: 0 }
+.advisor h3 { font-size: 24px; line-height: .95; overflow-wrap: anywhere }
+.advisor .role { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--faience) }
+.advisor p.bio { font-size: 14px; line-height: 1.55; color: var(--ink-2) }
+.advisor .cartouche .face { background: var(--faience) }
+
+/* "Your name could be here" call to action */
+.join-strip { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; background: var(--lapis); color: var(--papyrus); padding: 28px 32px; border: 2px solid var(--lapis) }
+.join-strip .cartouche { border-color: var(--papyrus); border-style: dashed }
+.join-strip .cartouche::after { background: var(--papyrus) }
+.join-strip .face { background: transparent !important; color: var(--papyrus) }
+.join-text { flex: 1 1 360px; display: flex; flex-direction: column; gap: 8px }
+.join-text h3 { font-size: 36px; line-height: .95 }
+.join-text p { font-size: 16px; line-height: 1.6; color: #DCE2F2 }
+.join-strip .btn { background: var(--gold); color: var(--ink); border-color: var(--gold) }
+.join-strip .btn:hover { box-shadow: 4px 4px 0 var(--ink) }
