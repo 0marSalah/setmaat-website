@@ -1,7 +1,8 @@
 header.site { position: sticky; top: 0; z-index: 10; background: var(--papyrus); border-bottom: 2px solid var(--ink) }
 .nav { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; padding-top: 16px; padding-bottom: 16px }
-.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink) }
-.brand span { font-family: var(--display); font-weight: 900; font-size: 30px; letter-spacing: .01em; text-transform: none; line-height: 1 }
+/* Brand lockup, in the proportions of the logo sheet: wordmark is Inter Bold at 0.71x the tile, 0.2x tile gap. */
+.brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: var(--ink) }
+.brand span { font-family: var(--body); font-weight: 700; font-size: 31px; letter-spacing: -.03em; line-height: 1 }
 .nav nav { display: flex; flex-wrap: wrap; gap: 26px; align-items: center; font-weight: 500; font-size: 15px }
 .nav nav a { text-decoration: none }
 .nav nav a:not(.btn) { color: var(--ink) }
@@ -17,4 +18,11 @@ header.site { position: sticky; top: 0; z-index: 10; background: var(--papyrus);
   .nav[data-menu-open="true"] nav { display: flex }
   .nav nav a:not(.btn) { display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid rgba(20, 22, 43, .14) }
   .nav nav .btn { margin-top: 16px; font-size: 17px }
+}
+
+/* Small phones: shrink the lockup so it and the Menu button share one row. */
+@media (max-width: 420px) {
+  .brand { gap: 7px }
+  .brand svg { width: 36px; height: 36px }
+  .brand span { font-size: 26px }
 }

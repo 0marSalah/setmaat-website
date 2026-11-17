@@ -1,10 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
-  <rect width="34" height="34" fill="#23408E"/>
-  <rect x="4" y="10.5" width="26" height="2" fill="#F4EEE2"/>
-  <path d="M7 12.5 L4 20 M7 12.5 L10 20 M27 12.5 L24 20 M27 12.5 L30 20" stroke="#F4EEE2" stroke-width="1"/>
-  <path d="M3 20 H11 A4 3.2 0 0 1 3 20 Z" fill="#F4EEE2"/>
-  <path d="M23 20 H31 A4 3.2 0 0 1 23 20 Z" fill="#F4EEE2"/>
-  <path d="M17 4.5 C 21.6 8, 22.2 17, 17.4 26 C 13.4 18.5, 13.2 10, 17 4.5 Z" fill="#D9A521"/>
-  <path d="M17 7.5 L17.4 28" stroke="#14162B" stroke-width="1.2"/>
-  <rect x="12.5" y="27.5" width="9.5" height="2.2" fill="#D9A521"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" fill="#F4EEE2"/>
+  <g fill="#1FA3A0">
+    <path d="M50,70 C34.07,67.93 20.05,57.78 13.1,43.29 C29.04,45.36 43.06,55.51 50,70Z"/>
+    <path d="M50,70 C56.94,55.51 70.96,45.36 86.9,43.29 C79.95,57.78 65.93,67.93 50,70Z"/>
+  </g>
+  <g fill="#F2B630">
+    <path d="M50,70 C36.93,60.99 29.92,45.22 32,26.9 C42.08,37.89 50.5,55.06 50,70Z"/>
+    <path d="M50,70 C63.07,60.99 70.08,45.22 68,26.9 C57.92,37.89 49.5,55.06 50,70Z"/>
+  </g>
+  <path d="M50,70 C39.93,51.58 39.93,33.42 50,15 C60.07,33.42 60.07,51.58 50,70Z" fill="#E8663D"/>
+  <g fill="#23408E">
+    <rect x="18" y="75" width="64" height="4"/>
+    <rect x="30" y="83" width="40" height="4"/>
+  </g>
 </svg>
