@@ -4,10 +4,6 @@
 /* container-type lets the headline size itself to this column (cqi units) rather than the whole window */
 .hero-copy { flex: 999 1 540px; min-width: 0; padding: 88px 48px 88px 0; display: flex; flex-direction: column; gap: 28px; container-type: inline-size }
 
-.vote-badge { align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; border: 2px solid var(--ink); background: var(--white); padding: 8px 14px; min-height: 44px; font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none }
-.vote-badge .dot { width: 10px; height: 10px; border-radius: 50%; background: #B8321A; animation: pulse 1.6s ease-in-out infinite }
-@keyframes pulse { 0%, 100% { opacity: 1 } 50% { opacity: .3 } }
-
 /* Big Shoulders capitals are 0.80em tall, so a 0.96 line-height leaves a clear 0.16em between lines. */
 .hero h1 { font-size: clamp(48px, 15cqi, 112px); line-height: .96; letter-spacing: .01em }
 .hero h1 .line { display: block; text-wrap: balance }

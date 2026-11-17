@@ -6,10 +6,6 @@ export function Hero() {
     <section className="hero">
       <div className="wrap">
         <div className="hero-copy">
-          <a className="vote-badge" href="#members">
-            <span className="dot" aria-hidden="true" />
-            Now welcoming new members →
-          </a>
           <h1>
             <span className="line">
               AI in <span className="gold">balance.</span>

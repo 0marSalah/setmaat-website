@@ -26,6 +26,7 @@ Every push to `main` builds the site and publishes it to https://0marsalah.githu
 
 - **One-time setup:** in the repo, go to **Settings > Pages** and set **Source** to **GitHub Actions**.
 - **Base path:** GitHub Pages serves the site from `/setmaat-website/`. The workflow passes that path to the build in `BASE_PATH`, so links, assets and member photos all resolve. You don't need to change anything if the repo is renamed or you add a custom domain.
+- **Deploying without GitHub Actions:** if Actions can't run (for example, while the account has a billing hold), run `pnpm deploy:pages`. It builds the site and pushes the output to the `gh-pages` branch. For this to work, **Settings > Pages > Source** must be set to **Deploy from a branch** and the branch to `gh-pages` / `(root)`. Switch the source back to **GitHub Actions** to return to automatic deploys.
 - **Check a Pages-style build locally:** `BASE_PATH=/setmaat-website/ pnpm build && BASE_PATH=/setmaat-website/ pnpm preview`, then open http://localhost:4173/setmaat-website/
 
 ## Project layout
@@ -61,4 +62,3 @@ The hero, "Why SetMaat", and footer text live in their own components under `src
 - `[EMAIL]` in `src/components/Footer.tsx`
 - Links that still point to `#`: the programs, "View the code", "Try a Space", "Apply to join", member links, and the footer links
 - The newsletter form in `src/components/Footer.tsx`, which isn't connected to a provider yet
-- The "Preview: not live yet" badge, which you can remove from `src/App.tsx`

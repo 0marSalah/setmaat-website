@@ -14,7 +14,7 @@ function Newsletter() {
         onSubmit={(event) => {
           event.preventDefault()
           // Not connected yet: send the address to your newsletter provider here.
-          setMessage('Thanks! This is a preview, so nothing was sent yet.')
+          setMessage("Thanks! Sign-ups open soon, so your address wasn't saved yet.")
         }}
       >
         <label htmlFor="email">Email address</label>

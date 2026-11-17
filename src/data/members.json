@@ -17,14 +17,12 @@
       "links": []
     },
     {
-      "name": "[FOUNDER NAME]",
-      "initials": "C",
-      "role": "[Role, e.g. Co-founder · Community]",
-      "bio": "[Three or four lines: their background, what they lead at SetMaat, and why they started the co-op.]",
-      "photo": "",
-      "links": [
-        { "label": "LinkedIn", "url": "#" }
-      ]
+      "name": "Kholoud Fattem",
+      "initials": "KF",
+      "role": "Software Engineer",
+      "bio": "Full-stack and backend engineer with a strong foundation in software architecture, system design, APIs, and distributed systems; contributes to open-source projects and builds interoperable, end-to-end solutions.",
+      "photo": "/members/kholoud-fattem.jpg",
+      "links": []
     }
   ],
   "advisors": [
