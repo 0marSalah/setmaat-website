@@ -18,7 +18,15 @@ pnpm dev          # http://localhost:5173
 | `pnpm preview` | Serve the built `dist/` folder locally           |
 | `pnpm lint`    | Lint with oxlint                                 |
 
-The build output in `dist/` is plain static files. You can host it on any static host, such as Netlify, Vercel, Cloudflare Pages or GitHub Pages.
+The build output in `dist/` is plain static files.
+
+## Deploying (GitHub Pages)
+
+Every push to `main` builds the site and publishes it to https://0marsalah.github.io/setmaat-website/ using `.github/workflows/deploy.yml`. You can also run it by hand from the repo's **Actions** tab.
+
+- **One-time setup:** in the repo, go to **Settings > Pages** and set **Source** to **GitHub Actions**.
+- **Base path:** GitHub Pages serves the site from `/setmaat-website/`. The workflow passes that path to the build in `BASE_PATH`, so links, assets and member photos all resolve. You don't need to change anything if the repo is renamed or you add a custom domain.
+- **Check a Pages-style build locally:** `BASE_PATH=/setmaat-website/ pnpm build && BASE_PATH=/setmaat-website/ pnpm preview`, then open http://localhost:4173/setmaat-website/
 
 ## Project layout
 

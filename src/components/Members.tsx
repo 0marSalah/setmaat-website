@@ -23,8 +23,15 @@ function Cartouche({ size, decorative, children }: { size: 'big' | 'small'; deco
   )
 }
 
+/** Resolves a photo path from members.json against the site's base path, so it still works when the
+ *  site is served from a subfolder (GitHub Pages serves it from /<repo-name>/). Full URLs pass through. */
+function photoUrl(photo: string) {
+  if (/^https?:\/\//.test(photo)) return photo
+  return import.meta.env.BASE_URL + photo.replace(/^\//, '')
+}
+
 function Face({ member }: { member: Member }) {
-  return member.photo ? <img src={member.photo} alt={`Photo of ${member.name}`} /> : initialsOf(member)
+  return member.photo ? <img src={photoUrl(member.photo)} alt={`Photo of ${member.name}`} /> : initialsOf(member)
 }
 
 function FounderCard({ member }: { member: Member }) {
