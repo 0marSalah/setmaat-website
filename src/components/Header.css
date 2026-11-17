@@ -1,7 +1,7 @@
 header.site { position: sticky; top: 0; z-index: 10; background: var(--papyrus); border-bottom: 2px solid var(--ink) }
 .nav { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; padding-top: 16px; padding-bottom: 16px }
-/* Brand lockup, in the proportions of the logo sheet: wordmark is Inter Bold at 0.71x the tile, 0.2x tile gap. */
-.brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: var(--ink) }
+/* Brand lockup, in the proportions of the logo sheet: the lotus is about as tall as the wordmark's font size. */
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--ink) }
 .brand span { font-family: var(--body); font-weight: 700; font-size: 31px; letter-spacing: -.03em; line-height: 1 }
 .nav nav { display: flex; flex-wrap: wrap; gap: 26px; align-items: center; font-weight: 500; font-size: 15px }
 .nav nav a { text-decoration: none }
@@ -22,7 +22,7 @@ header.site { position: sticky; top: 0; z-index: 10; background: var(--papyrus);
 
 /* Small phones: shrink the lockup so it and the Menu button share one row. */
 @media (max-width: 420px) {
-  .brand { gap: 7px }
-  .brand svg { width: 36px; height: 36px }
+  .brand { gap: 11px }
+  .brand svg { width: auto; height: 26px }
   .brand span { font-size: 26px }
 }

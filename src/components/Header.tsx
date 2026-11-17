@@ -44,7 +44,7 @@ export function Header() {
     <header className="site">
       <div className="wrap nav" data-menu-open={menuOpen}>
         <a className="brand" href="#top" aria-label="SetMaat home" onClick={closeMenu}>
-          <Logo size={44} />
+          <Logo height={32} />
           <span>SetMaat</span>
         </a>
         <button

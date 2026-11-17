@@ -18,8 +18,8 @@ footer nav b { color: var(--gold) }
 footer nav a { color: var(--papyrus); text-decoration: none }
 footer nav a:hover { color: var(--gold) }
 
-/* Large brand lockup along the bottom, in the logo sheet's proportions: --tile is the logo size,
-   the wordmark is Inter Bold at 0.71x the tile, and the gap is 0.2x the tile. */
-.foot-mark { --tile: clamp(64px, 20vw, 220px); display: flex; align-items: center; gap: calc(var(--tile) * .2); overflow: hidden }
-.foot-logo { flex: 0 0 auto; width: var(--tile); height: auto }
+/* Large brand lockup along the bottom, in the logo sheet's proportions. --tile is the sizing unit
+   (the old tile size): the lotus is 0.72x it, the wordmark is Inter Bold at 0.71x, and the gap 0.3x. */
+.foot-mark { --tile: clamp(64px, 20vw, 220px); display: flex; align-items: center; gap: calc(var(--tile) * .3); overflow: hidden }
+.foot-logo { flex: 0 0 auto; height: calc(var(--tile) * .72); width: auto }
 .wordmark { min-width: 0; font-family: var(--body); font-weight: 700; font-size: calc(var(--tile) * .71); line-height: 1; letter-spacing: -.03em; color: var(--papyrus); white-space: nowrap }

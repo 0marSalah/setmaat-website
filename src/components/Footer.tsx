@@ -49,7 +49,7 @@ export function Footer() {
           </nav>
         </div>
         <div className="foot-mark" aria-hidden="true">
-          <Logo size={120} className="foot-logo" />
+          <Logo height={120} tone="dark" className="foot-logo" />
           <div className="wordmark nm">SetMaat</div>
         </div>
       </div>
