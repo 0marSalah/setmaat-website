@@ -117,9 +117,6 @@ export function Members() {
               shape what we build, wherever you live.
             </p>
           </div>
-          <a className="btn" href="#">
-            Apply to join
-          </a>
         </div>
       </div>
     </section>

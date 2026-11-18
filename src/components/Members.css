@@ -39,6 +39,4 @@
 .join-strip .face { background: transparent !important; color: var(--papyrus) }
 .join-text { flex: 1 1 360px; display: flex; flex-direction: column; gap: 8px }
 .join-text h3 { font-size: 36px; line-height: .95 }
-.join-text p { font-size: 16px; line-height: 1.6; color: #DCE2F2 }
-.join-strip .btn { background: var(--gold); color: var(--ink); border-color: var(--gold) }
-.join-strip .btn:hover { box-shadow: 4px 4px 0 var(--ink) }
+.join-text p { font-size: 16px; line-height: 1.6; color: #DCE2F2; max-width: 680px }

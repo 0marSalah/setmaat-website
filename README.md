@@ -60,5 +60,5 @@ The hero, "Why SetMaat", and footer text live in their own components under `src
 - Founder and advisor details in `src/data/members.json`
 - `[MEMBERSHIP FEE / TERMS]` in `src/components/Members.tsx`
 - `[EMAIL]` in `src/components/Footer.tsx`
-- Links that still point to `#`: the programs, "View the code", "Try a Space", "Apply to join", member links, and the footer links
+- Links that still point to `#`: the programs, "View the code", "Try a Space", member links, and the footer links
 - The newsletter form in `src/components/Footer.tsx`, which isn't connected to a provider yet
