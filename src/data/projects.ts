@@ -32,7 +32,6 @@ export const PROJECTS: Project[] = [
     tags: ['Open source', 'DIDs', 'Verifiable credentials', 'Capabilities (ZCAP)'],
     links: [
       { label: 'Visit freewallet.me', href: 'https://freewallet.me', variant: 'primary' },
-      { label: 'View the code', href: '#', variant: 'ghost' },
     ],
     art: 'wallet',
     tone: 'lapis',
@@ -51,7 +50,6 @@ export const PROJECTS: Project[] = [
     tags: ['Open standard', 'W3C CCG', 'Capability-based access', 'Self-hostable'],
     links: [
       { label: 'Read the spec', href: 'https://github.com/w3c-ccg/portable-web-spaces-spec', variant: 'primary' },
-      { label: 'Try a Space', href: '#', variant: 'ghost' },
     ],
     art: 'spaces',
     tone: 'faience',

@@ -35,18 +35,6 @@ export function Footer() {
       <div className="wrap">
         <div className="foot-cols">
           <Newsletter />
-          <nav aria-label="Co-op">
-            <b>Co-op</b>
-            <a href="#">Bylaws</a>
-            <a href="#">Annual report</a>
-            <a href="#">Board &amp; stewards</a>
-          </nav>
-          <nav aria-label="Community">
-            <b>Community</b>
-            <a href="#">GitHub</a>
-            <a href="#">Forum</a>
-            <span>[EMAIL]</span>
-          </nav>
         </div>
         <div className="foot-mark" aria-hidden="true">
           <Logo height={120} tone="dark" className="foot-logo" />

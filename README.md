@@ -57,8 +57,8 @@ The hero, "Why SetMaat", and footer text live in their own components under `src
 
 ## Still to fill in before launch
 
-- Founder and advisor details in `src/data/members.json`
-- `[MEMBERSHIP FEE / TERMS]` in `src/components/Members.tsx`
-- `[EMAIL]` in `src/components/Footer.tsx`
-- Links that still point to `#`: the programs, "View the code", "Try a Space", member links, and the footer links
+- Juan's full name, photo and final bio in `src/data/members.json` (the current bio is a stand-in)
+- Profile links for members, in `src/data/members.json`
 - The newsletter form in `src/components/Footer.tsx`, which isn't connected to a provider yet
+
+Placeholder links were removed rather than left pointing to `#`. When there are real pages for them, add back: links on the program cards (`src/data/programs.ts`), "View the code" and "Try a Space" on the projects (`src/data/projects.ts`), the footer's co-op and community links (bylaws, annual report, GitHub, forum, contact email), and a way to join the co-op.

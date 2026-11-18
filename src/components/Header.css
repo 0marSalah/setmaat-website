@@ -4,9 +4,8 @@ header.site { position: sticky; top: 0; z-index: 10; background: var(--papyrus);
 .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--ink) }
 .brand span { font-family: var(--body); font-weight: 700; font-size: 31px; letter-spacing: -.03em; line-height: 1 }
 .nav nav { display: flex; flex-wrap: wrap; gap: 26px; align-items: center; font-weight: 500; font-size: 15px }
-.nav nav a { text-decoration: none }
-.nav nav a:not(.btn) { color: var(--ink) }
-.nav nav a:not(.btn):hover { text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 3px; text-underline-offset: 6px }
+.nav nav a { text-decoration: none; color: var(--ink) }
+.nav nav a:hover { text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 3px; text-underline-offset: 6px }
 
 .menu-toggle { display: none }
 
@@ -16,8 +15,8 @@ header.site { position: sticky; top: 0; z-index: 10; background: var(--papyrus);
   .nav[data-menu-open="true"] .menu-toggle { background: var(--ink); color: var(--papyrus) }
   .nav nav { display: none; flex: 1 1 100%; flex-direction: column; align-items: stretch; gap: 0; font-size: 18px; padding-bottom: 4px }
   .nav[data-menu-open="true"] nav { display: flex }
-  .nav nav a:not(.btn) { display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid rgba(20, 22, 43, .14) }
-  .nav nav .btn { margin-top: 16px; font-size: 17px }
+  .nav nav a { display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid rgba(20, 22, 43, .14) }
+  .nav nav a:last-child { border-bottom: 0 }
 }
 
 /* Small phones: shrink the lockup so it and the Menu button share one row. */

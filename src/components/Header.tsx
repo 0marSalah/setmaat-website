@@ -64,9 +64,6 @@ export function Header() {
               {link.label}
             </a>
           ))}
-          <a className="btn btn-dark" href="#join-card" onClick={closeMenu}>
-            Join the co-op
-          </a>
         </nav>
       </div>
     </header>

@@ -38,8 +38,6 @@ h3 { font-size: 30px; line-height: 1 }
 .btn-primary:hover { color: var(--white); box-shadow: 4px 4px 0 var(--gold) }
 .btn-ghost { background: transparent; color: var(--ink) }
 .btn-ghost:hover { color: var(--ink) }
-.btn-dark { background: var(--ink); color: var(--papyrus) }
-.btn-dark:hover { color: var(--papyrus); box-shadow: 4px 4px 0 var(--lapis) }
 
 .btn:focus-visible, a:focus-visible, input:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px }
 

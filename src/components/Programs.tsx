@@ -11,14 +11,13 @@ export function Programs() {
         </SectionHead>
         <div className="programs">
           {PROGRAMS.map((program, i) => (
-            <a key={program.title} className="program" href={program.href}>
+            <article key={program.title} className="program">
               <span className="num" aria-hidden="true">
                 {String(i + 1).padStart(2, '0')}
               </span>
               <h3>{program.title}</h3>
               <p>{program.description}</p>
-              <span className="more">{program.cta}</span>
-            </a>
+            </article>
           ))}
         </div>
       </div>

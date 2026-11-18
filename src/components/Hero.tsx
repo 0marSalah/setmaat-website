@@ -17,8 +17,8 @@ export function Hero() {
             tools for everyone: fairly, in the open, and for the people they serve.
           </p>
           <div className="hero-ctas">
-            <a className="btn btn-primary" href="#join-card">
-              Become a member
+            <a className="btn btn-primary" href="#work">
+              See our work
             </a>
             <a className="btn btn-ghost" href="#name">
               Why “SetMaat”?

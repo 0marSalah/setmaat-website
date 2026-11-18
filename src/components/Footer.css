@@ -13,11 +13,6 @@ footer .wrap { padding-top: 72px; padding-bottom: clamp(32px, 5vw, 64px); displa
 .foot-news button { flex: 1 0 auto; min-height: 52px; padding: 0 24px; border: 2px solid var(--gold); background: var(--gold); color: var(--ink); font: inherit; font-weight: 700; cursor: pointer }
 .foot-news .thanks { font-size: 14px; color: var(--gold); min-height: 20px }
 
-footer nav { flex: 1 1 160px; display: flex; flex-direction: column; gap: 12px; font-size: 15px }
-footer nav b { color: var(--gold) }
-footer nav a { color: var(--papyrus); text-decoration: none }
-footer nav a:hover { color: var(--gold) }
-
 /* Large brand lockup along the bottom, in the logo sheet's proportions. --tile is the sizing unit
    (the old tile size): the lotus is 0.72x it, the wordmark is Inter Bold at 0.71x, and the gap 0.3x. */
 .foot-mark { --tile: clamp(64px, 20vw, 220px); display: flex; align-items: center; gap: calc(var(--tile) * .3); overflow: hidden }

@@ -113,8 +113,7 @@ export function Members() {
           <div className="join-text">
             <h3>Your name could be here</h3>
             <p>
-              Membership is [MEMBERSHIP FEE / TERMS]. Join the learning circles, work on open projects, and help
-              shape what we build, wherever you live.
+              Join the learning circles, work on open projects, and help shape what we build, wherever you live.
             </p>
           </div>
         </div>

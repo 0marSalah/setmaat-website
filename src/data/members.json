@@ -27,17 +27,10 @@
   ],
   "advisors": [
     {
-      "name": "[ADVISOR NAME]",
-      "initials": "D",
-      "role": "[Expertise, e.g. AI research]",
-      "bio": "[One or two lines: who they are and what they advise on.]",
-      "photo": ""
-    },
-    {
-      "name": "[ADVISOR NAME]",
-      "initials": "E",
-      "role": "[Expertise, e.g. co-op law]",
-      "bio": "[One or two lines: who they are and what they advise on.]",
+      "name": "Juan",
+      "initials": "J",
+      "role": "Senior Engineer",
+      "bio": "A highly experienced engineer who played a key part in getting our members started, encouraging them, helping them grow, and advising them along the way.",
       "photo": ""
     }
   ]
