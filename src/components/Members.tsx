@@ -34,9 +34,10 @@ function Face({ member }: { member: Member }) {
   return member.photo ? <img src={photoUrl(member.photo)} alt={`Photo of ${member.name}`} /> : initialsOf(member)
 }
 
-function FounderCard({ member }: { member: Member }) {
+/** One card for every person, founder or advisor, so nobody looks more or less important. */
+function ProfileCard({ member }: { member: Member }) {
   return (
-    <article className="member founder">
+    <article className="member profile">
       <Cartouche size="big">
         <Face member={member} />
       </Cartouche>
@@ -52,21 +53,6 @@ function FounderCard({ member }: { member: Member }) {
           ))}
         </div>
       )}
-    </article>
-  )
-}
-
-function AdvisorCard({ member }: { member: Member }) {
-  return (
-    <article className="member advisor">
-      <Cartouche size="big">
-        <Face member={member} />
-      </Cartouche>
-      <div>
-        <span className="role">{member.role}</span>
-        <h3>{member.name}</h3>
-        <p className="bio">{member.bio}</p>
-      </div>
     </article>
   )
 }
@@ -91,18 +77,18 @@ export function Members() {
         <div className="group-label">
           <span>Founding members</span>
         </div>
-        <div className="founders">
+        <div className="people">
           {FOUNDERS.map((member) => (
-            <FounderCard key={memberKey(member)} member={member} />
+            <ProfileCard key={memberKey(member)} member={member} />
           ))}
         </div>
 
         <div className="group-label">
           <span>{ADVISORS.length === 1 ? 'Advisor' : 'Advisors'}</span>
         </div>
-        <div className="advisors">
+        <div className="people">
           {ADVISORS.map((member) => (
-            <AdvisorCard key={memberKey(member)} member={member} />
+            <ProfileCard key={memberKey(member)} member={member} />
           ))}
         </div>
 
