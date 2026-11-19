@@ -9,8 +9,9 @@ export function WhySetMaat() {
             Why we exist
           </p>
           <p className="statement">
-            AI is becoming the infrastructure of everyday life. It's <mark>too important to be owned by a few</mark>.
-            So we build it the way Maat asks: fairly, in the open, and in balance with the people it serves.
+            <mark>You hold your own keys</mark>, keep your data where you choose, and decide who gets access, whether
+            it's a person, an app or an AI agent. That's what we build, so platforms no longer decide who sees your
+            identity, your records and your data.
           </p>
         </div>
       </div>

@@ -59,7 +59,7 @@ function FounderCard({ member }: { member: Member }) {
 function AdvisorCard({ member }: { member: Member }) {
   return (
     <article className="member advisor">
-      <Cartouche size="small">
+      <Cartouche size="big">
         <Face member={member} />
       </Cartouche>
       <div>
@@ -98,7 +98,7 @@ export function Members() {
         </div>
 
         <div className="group-label">
-          <span>Advisors</span>
+          <span>{ADVISORS.length === 1 ? 'Advisor' : 'Advisors'}</span>
         </div>
         <div className="advisors">
           {ADVISORS.map((member) => (
@@ -113,7 +113,8 @@ export function Members() {
           <div className="join-text">
             <h3>Your name could be here</h3>
             <p>
-              Join the learning circles, work on open projects, and help shape what we build, wherever you live.
+              Join the learning circles, contribute to open tools and standards, and help shape what we build,
+              wherever you live.
             </p>
           </div>
         </div>

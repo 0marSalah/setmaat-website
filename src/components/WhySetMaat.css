@@ -3,7 +3,7 @@
 
 /* A single column, capped so the large statement keeps a comfortable line length on wide screens. */
 .name-text { max-width: 900px; display: flex; flex-direction: column; gap: 22px }
-.name-text .statement { font-size: clamp(26px, 2.6vw, 38px); line-height: 1.25; font-weight: 600; letter-spacing: -.01em }
+.name-text .statement { font-size: clamp(26px, 2.6vw, 38px); line-height: 1.25; font-weight: 600; letter-spacing: -.01em; text-wrap: pretty }
 .name-text .statement mark { background: none; color: var(--lapis); box-shadow: inset 0 -0.32em 0 rgba(217, 165, 33, .55) }
 
 @media (max-width: 720px) {

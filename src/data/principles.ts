@@ -1,7 +1,7 @@
 export const PRINCIPLES = [
-  'Fair by design',
+  'You hold the keys',
+  'Open standards',
   'Open source, always',
+  'No lock-in',
   'Non-profit',
-  'Books in public',
-  'Open to the world',
 ]

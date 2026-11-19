@@ -1,8 +1,8 @@
 .group-label { display: flex; align-items: center; gap: 16px; font-family: var(--display); font-weight: 800; font-size: 22px; letter-spacing: .08em; text-transform: uppercase; color: var(--lapis) }
 .group-label::after { content: ""; flex: 1; height: 2px; background: var(--ink) }
 .founders { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: -16px }
-/* Same column width as the founder cards, so advisors line up under them. */
-.advisors { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; margin-top: -16px }
+/* Advisors get wide featured cards: one fills the row, more sit two to a row on wide screens. */
+.advisors { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr)); gap: 24px; margin-top: -16px }
 
 .member { background: var(--white); border: 2px solid var(--ink); display: flex; flex-direction: column; gap: 18px; transition: transform .15s ease, box-shadow .15s ease }
 .member:hover { transform: translate(-3px, -3px); box-shadow: 6px 6px 0 var(--lapis) }
@@ -25,13 +25,20 @@
 .founder p.bio { font-size: 16px; line-height: 1.6; color: var(--ink-2) }
 .founder .links { margin-top: auto; display: flex; gap: 18px; justify-content: center; font-size: 14px; font-weight: 600 }
 
-/* Advisor cards */
-.advisor { padding: 22px; flex-direction: row; align-items: flex-start; gap: 18px }
-.advisor > div { display: flex; flex-direction: column; gap: 6px; min-width: 0 }
-.advisor h3 { font-size: 24px; line-height: .95; overflow-wrap: anywhere }
-.advisor .role { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--faience) }
-.advisor p.bio { font-size: 14px; line-height: 1.55; color: var(--ink-2) }
+/* Advisor cards: the founders' frame and type sizes, laid out side by side. */
+.advisor { padding: 36px 40px; flex-direction: row; align-items: center; gap: 44px }
+.advisor > div { display: flex; flex-direction: column; gap: 14px; min-width: 0 }
+.advisor h3 { font-size: 38px; line-height: .92; overflow-wrap: anywhere }
+.advisor .role { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--faience) }
+.advisor p.bio { font-size: 20px; line-height: 1.6; color: var(--ink-2); max-width: 720px }
 .advisor .cartouche .face { background: var(--faience) }
+
+/* Narrow cards stack like a founder card. */
+@media (max-width: 640px) {
+  .advisor { flex-direction: column; text-align: center; padding: 36px 32px; gap: 18px }
+  .advisor > div { align-items: center }
+  .advisor p.bio { font-size: 16px }
+}
 
 /* "Your name could be here" call to action */
 .join-strip { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; background: var(--lapis); color: var(--papyrus); padding: 28px 32px; border: 2px solid var(--lapis) }

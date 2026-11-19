@@ -8,7 +8,7 @@ function Newsletter() {
 
   return (
     <div className="foot-news">
-      <span className="foot-news-title">Monthly letter: new projects, learning circles, meetups.</span>
+      <span className="foot-news-title">Monthly letter: releases, standards news, learning circles.</span>
       <form
         noValidate
         onSubmit={(event) => {

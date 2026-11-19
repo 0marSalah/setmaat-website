@@ -21,17 +21,19 @@ export const PROJECTS: Project[] = [
   {
     kicker: 'Digital wallet',
     title: 'Freewallet',
-    lead: 'A free wallet for your digital identity and the data that belongs to you.',
+    lead: 'A free, open-source wallet for your digital identity, credentials and keys.',
     description:
-      'Freewallet lets people hold their own keys and credentials, connect to their own storage, and decide exactly who gets access, including AI agents.',
+      'Freewallet runs in your browser and keeps your keys on your side. There is no login server holding your account: you unlock it with a passkey or a passphrase, and you decide exactly who gets access to what, including AI agents.',
     points: [
-      'Your identity (DIDs) and credentials, held by you, not a platform',
-      'Give an AI agent a scoped, revocable permission to your storage instead of handing over everything',
-      'Works with PWS Spaces for storing your data',
+      'Hold your DIDs, verifiable credentials and keys yourself, not on a platform',
+      'Unlock with a passkey, checked on your device rather than by a server',
+      'Give an app or AI agent scoped, revocable access instead of handing over everything',
+      'Syncs your wallet to PWS Spaces you choose',
     ],
-    tags: ['Open source', 'DIDs', 'Verifiable credentials', 'Capabilities (ZCAP)'],
+    tags: ['Open source', 'DIDs', 'Verifiable credentials', 'Passkeys', 'Capabilities (ZCAP)'],
     links: [
       { label: 'Visit freewallet.me', href: 'https://freewallet.me', variant: 'primary' },
+      { label: 'View the code', href: 'https://github.com/interop-alliance/freewallet', variant: 'ghost' },
     ],
     art: 'wallet',
     tone: 'lapis',
@@ -43,13 +45,15 @@ export const PROJECTS: Project[] = [
     description:
       'PWS is storage built on the Portable Web Spaces specification from the W3C Credentials Community Group. Each space belongs to its owner, and apps only get the access you grant them.',
     points: [
-      'Organise your data into spaces, each with its own permissions',
-      'Export a space and import it somewhere else, with no lock-in',
-      'Replicate spaces across servers you choose',
+      'Organise your data into Spaces and Collections, each with its own permissions',
+      'Share access with capabilities you can delegate and revoke at any time',
+      "Encrypt collections so the server storing them can't read them",
+      'Export a space and import it elsewhere, or sync it across servers you choose',
     ],
     tags: ['Open standard', 'W3C CCG', 'Capability-based access', 'Self-hostable'],
     links: [
-      { label: 'Read the spec', href: 'https://github.com/w3c-ccg/portable-web-spaces-spec', variant: 'primary' },
+      { label: 'Read the spec', href: 'https://w3c-ccg.github.io/portable-web-spaces-spec/', variant: 'primary' },
+      { label: 'View the server code', href: 'https://github.com/interop-alliance/web-spaces-server', variant: 'ghost' },
     ],
     art: 'spaces',
     tone: 'faience',

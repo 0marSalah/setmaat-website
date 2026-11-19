@@ -5,16 +5,18 @@ export type Program = {
 
 export const PROGRAMS: Program[] = [
   {
-    title: 'Open-source AI',
-    description: 'Models, datasets and tools that anyone can use, study and build on, in any language.',
+    title: 'Open-source tools',
+    description:
+      'Wallets, storage servers and libraries for digital identity, verifiable credentials and secure sharing. Free for anyone to use, study and build on.',
+  },
+  {
+    title: 'Open standards',
+    description:
+      'We take part in the standards these tools rest on, like Portable Web Spaces at the W3C Credentials Community Group, so wallets and storage from different makers work together.',
   },
   {
     title: 'Learning circles',
     description:
-      'Free study groups, online and in person, where members teach each other, from first model to production.',
-  },
-  {
-    title: 'AI for the community',
-    description: "Pro-bono projects with NGOs, schools and small businesses that can't afford an AI team.",
+      'Free study groups, online and in person, where members teach each other identity, credentials and secure storage, from first key pair to production.',
   },
 ]

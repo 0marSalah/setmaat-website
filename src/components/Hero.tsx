@@ -8,13 +8,13 @@ export function Hero() {
         <div className="hero-copy">
           <h1>
             <span className="line">
-              AI in <span className="gold">balance.</span>
+              Own your <span className="gold">identity.</span>
             </span>{' '}
-            <span className="line">Owned by all of us.</span>
+            <span className="line">Own your data.</span>
           </h1>
           <p className="hero-lede">
-            SetMaat is a non-profit AI cooperative from Cairo. Engineers, researchers and learners build open AI
-            tools for everyone: fairly, in the open, and for the people they serve.
+            SetMaat is a non-profit cooperative from Cairo building open-source tools for digital identity and
+            personal data: a wallet for your credentials and keys, and storage you control, all on open standards.
           </p>
           <div className="hero-ctas">
             <a className="btn btn-primary" href="#work">
@@ -31,7 +31,8 @@ export function Hero() {
           <figcaption>
             <strong>Set + Maat</strong>
             In ancient Egypt, Maat stood for truth, fairness and order, drawn as a single feather. SetMaat means
-            “setting Maat in place”: when the scale tips, we set it right.
+            “setting Maat in place”. Today the scale tips toward the platforms that hold our data. We build tools
+            that set it right.
           </figcaption>
         </figure>
       </div>

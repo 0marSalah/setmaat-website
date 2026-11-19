@@ -65,4 +65,4 @@ The hero, "Why SetMaat", and footer text live in their own components under `src
 - Profile links for members, in `src/data/members.json`
 - The newsletter form in `src/components/Footer.tsx`, which isn't connected to a provider yet
 
-Placeholder links were removed rather than left pointing to `#`. When there are real pages for them, add back: links on the program cards (`src/data/programs.ts`), "View the code" and "Try a Space" on the projects (`src/data/projects.ts`), the footer's co-op and community links (bylaws, annual report, GitHub, forum, contact email), and a way to join the co-op.
+Placeholder links were removed rather than left pointing to `#`. When there are real pages for them, add back: links on the program cards (`src/data/programs.ts`), "Try a Space" on PWS (`src/data/projects.ts`), the footer's co-op and community links (bylaws, annual report, GitHub, forum, contact email), and a way to join the co-op.

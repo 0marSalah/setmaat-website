@@ -11,7 +11,7 @@ Founders and advisors on the website come from [`members.json`](./members.json).
 | Field      | Required | What it is                                                                                  |
 | ---------- | -------- | ------------------------------------------------------------------------------------------- |
 | `name`     | yes      | Your full name                                                                              |
-| `role`     | yes      | Short title, e.g. `"Co-founder · Engineering"` or `"AI research"`                           |
+| `role`     | yes      | Short title, e.g. `"Co-founder · Engineering"` or `"Decentralized identity"`                           |
 | `bio`      | yes      | Founders: three or four lines. Advisors: one or two lines.                                  |
 | `initials` | no       | Shown when there's no photo. Leave `""` to use the first letters of your name.               |
 | `photo`    | no       | Leave `""` to show initials. See below to add a photo.                                       |
