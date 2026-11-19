@@ -30,7 +30,7 @@
 .advisor > div { display: flex; flex-direction: column; gap: 14px; min-width: 0 }
 .advisor h3 { font-size: 38px; line-height: .92; overflow-wrap: anywhere }
 .advisor .role { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--faience) }
-.advisor p.bio { font-size: 20px; line-height: 1.6; color: var(--ink-2); max-width: 720px }
+.advisor p.bio { font-size: 18px; line-height: 1.6; color: var(--ink-2); max-width: 760px }
 .advisor .cartouche .face { background: var(--faience) }
 
 /* Narrow cards stack like a founder card. */

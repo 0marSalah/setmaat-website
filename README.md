@@ -61,7 +61,6 @@ The hero, "Why SetMaat", and footer text live in their own components under `src
 
 ## Still to fill in before launch
 
-- Juan's full name, photo and final bio in `src/data/members.json` (the current bio is a stand-in)
 - Profile links for members, in `src/data/members.json`
 - The newsletter form in `src/components/Footer.tsx`, which isn't connected to a provider yet
 

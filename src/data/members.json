@@ -27,11 +27,11 @@
   ],
   "advisors": [
     {
-      "name": "Juan",
-      "initials": "J",
-      "role": "Senior Engineer",
-      "bio": "A highly experienced engineer who played a key part in getting our members started, encouraging them, helping them grow, and advising them along the way.",
-      "photo": ""
+      "name": "Juan “Bumblefudge” Caballero",
+      "initials": "JC",
+      "role": "Community Builder",
+      "bio": "Juan Caballero works across every aspect of developer communities, from standardization and ecosystem-building to non-extractive sustainability models and community governance. Most of his work centers on open-sourcing and decentralizing digital identity and community data governance, with a particular fondness for groupware, information quality, and speech/communication networks. He can always find time for light-touch or time-bound community engagements and values-aligned grant-work.",
+      "photo": "/members/juan-caballero.jpg"
     }
   ]
 }
