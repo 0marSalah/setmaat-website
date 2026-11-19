@@ -1,0 +1,12 @@
+// Cloudflare deploy settings. Cloudflare runs `pnpm run build` and then `npx wrangler deploy`,
+// which uploads the built site in dist/ as static files. No server code runs.
+{
+  // Must match the project name in the Cloudflare dashboard, or the deploy fails.
+  "name": "setmaat",
+  "compatibility_date": "2025-12-01",
+  "assets": {
+    "directory": "./dist",
+    // The site is a single page, so any unknown path shows the home page instead of an error.
+    "not_found_handling": "single-page-application"
+  }
+}

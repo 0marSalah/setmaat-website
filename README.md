@@ -20,9 +20,13 @@ pnpm dev          # http://localhost:5173
 
 The build output in `dist/` is plain static files.
 
+## Deploying (Cloudflare)
+
+Cloudflare is connected to this repo and deploys every push to `main`. It runs `pnpm run build`, then `npx wrangler deploy`, which uploads `dist/` using the settings in `wrangler.jsonc`. The `name` there must match the project name in the Cloudflare dashboard (`setmaat`). Other branches get preview builds.
+
 ## Deploying (GitHub Pages)
 
-Every push to `main` builds the site and publishes it to https://0marsalah.github.io/setmaat-website/ using `.github/workflows/deploy.yml`. You can also run it by hand from the repo's **Actions** tab.
+Every push to `main` builds the site and publishes it to https://setmaat.github.io/setmaat-website/ using `.github/workflows/deploy.yml`. You can also run it by hand from the repo's **Actions** tab.
 
 - **One-time setup:** in the repo, go to **Settings > Pages** and set **Source** to **GitHub Actions**.
 - **Base path:** GitHub Pages serves the site from `/setmaat-website/`. The workflow passes that path to the build in `BASE_PATH`, so links, assets and member photos all resolve. You don't need to change anything if the repo is renamed or you add a custom domain.
