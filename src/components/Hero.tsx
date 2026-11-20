@@ -7,14 +7,15 @@ export function Hero() {
       <div className="wrap">
         <div className="hero-copy">
           <h1>
+            <span className="line">The Agentic Digital</span>{' '}
             <span className="line">
-              Own your <span className="gold">identity.</span>
-            </span>{' '}
-            <span className="line">Own your data.</span>
+              <span className="gold">Backpack</span> Platform.
+            </span>
           </h1>
           <p className="hero-lede">
-            SetMaat is a non-profit cooperative from Cairo building open-source tools for digital identity and
-            personal data: a wallet for your credentials and keys, and storage you control, all on open standards.
+            Everything your AI needs to know about you, carried by you. Notes, memories, records and archives in
+            one open, encrypted store, where you decide which apps and agents can reach in. Built for small,
+            local, fit-for-purpose AI by SetMaat, a non-profit cooperative from Cairo.
           </p>
           <div className="hero-ctas">
             <a className="btn btn-primary" href="#work">

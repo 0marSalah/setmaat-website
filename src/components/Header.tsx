@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { href: '#programs', label: 'Programs' },
   { href: '#name', label: 'Why SetMaat' },
   { href: '#work', label: 'Our work' },
+  { href: '#adopters', label: 'In use' },
   { href: '#members', label: 'Members' },
 ]
 

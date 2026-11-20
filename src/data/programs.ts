@@ -5,18 +5,18 @@ export type Program = {
 
 export const PROGRAMS: Program[] = [
   {
-    title: 'Open-source tools',
+    title: 'The Agentic Digital Backpack Platform',
     description:
-      'Wallets, storage servers and libraries for digital identity, verifiable credentials and secure sharing. Free for anyone to use, study and build on.',
+      'The storage servers, wallets and libraries behind the backpack. They give a small AI project encrypted storage and fine-grained authorization without building them from scratch. Fully open source, self-hostable, free to use, study and build on.',
   },
   {
-    title: 'Open standards',
+    title: 'Interop through open standards',
     description:
-      'We take part in the standards these tools rest on, like Portable Web Spaces at the W3C Credentials Community Group, so wallets and storage from different makers work together.',
+      'We take part in the standards these tools rest on, like Portable Web Spaces at the W3C Credentials Community Group, so projects from different teams can read and write the same data instead of each inventing a format.',
   },
   {
     title: 'Learning circles',
     description:
-      'Free study groups, online and in person, where members teach each other identity, credentials and secure storage, from first key pair to production.',
+      'Study groups, online and in person, where members and teams adopting these tools work through storage, keys and authorization together, from first key pair to production.',
   },
 ]

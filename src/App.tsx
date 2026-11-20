@@ -1,3 +1,4 @@
+import { Adopters } from './components/Adopters.tsx'
 import { Footer } from './components/Footer.tsx'
 import { Frieze } from './components/Frieze.tsx'
 import { Header } from './components/Header.tsx'
@@ -20,6 +21,7 @@ export default function App() {
         <Programs />
         <Frieze thin />
         <Work />
+        <Adopters />
         <Frieze thin />
         <Members />
       </main>

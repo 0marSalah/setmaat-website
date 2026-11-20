@@ -53,7 +53,8 @@ src/
 Most copy lives in `src/data/`, so you can change it without touching the components:
 
 - `members.json`: founders and advisors. Members can edit their own entry on GitHub. Send them the link to [`src/data/README.md`](src/data/README.md), which explains the fields and how to add a photo. `pnpm build` fails if an entry is missing a required field.
-- `projects.ts`: the "What we're building" projects (Freewallet, PWS Spaces).
+- `projects.ts`: the "What we're building" section: the Agentic Digital Backpack lead panel and the two tools inside it (PWS Spaces, Freewallet).
+- `adopters.ts`: the "Who is using our tech" organizations and projects.
 - `programs.ts`: the three programs.
 - `principles.ts`: the gold principles strip.
 
