@@ -26,8 +26,11 @@ site/                          Everything that gets published
     index.html                 What we're building page
   styles.css                   All styles for both pages: colours, fonts, layout, motion
   site.js                      All behaviour: wallet demo, switches, scroll reveals, newsletter form
-  img/                         Illustrations and logos (SVG), shared by both pages
+  img/                         Illustrations and logos, shared by both pages
   members/                     Member photos
+  404.html                     Shown for any address that doesn't exist
+  robots.txt, sitemap.xml      For search engines (see "Search engines" below)
+  og-image.png                 The preview image shown when someone shares a link
   favicon.svg, apple-touch-icon.png
 wrangler.jsonc                 Cloudflare settings
 .github/workflows/deploy.yml   GitHub Pages copy
@@ -45,6 +48,15 @@ All text lives in the two HTML files. Each section starts with a comment naming 
 - **The header and footer** are repeated in both pages. When you change one, change the other.
 - **Colours and fonts** are set once, at the top of `site/styles.css`, as `--papyrus`, `--lapis`, `--gold` and so on.
 - **Fade-in on scroll:** add `data-reveal` to any element and it fades in as it scrolls into view. Without JavaScript, or for people who turn off motion, it just shows.
+
+## Search engines
+
+- **One real address:** the same files are served at setmaat.com and on GitHub Pages. Each page's `<head>` has a `<link rel="canonical">` pointing to its setmaat.com address, so search engines treat setmaat.com as the real one. Keep it when you edit a page, and give any new page its own.
+- **Structured data:** the `<script type="application/ld+json">` block in each page's `<head>` tells search engines that SetMaat is an organization based in Cairo, at setmaat.com. If the founders or the GitHub link change, update it in `site/index.html`.
+- **Sitemap:** `site/sitemap.xml` lists every page. When you add a page, add a `<url>` for it. When a page changes a lot, update its `<lastmod>` date.
+- **Link previews:** the `og:` tags in each `<head>` set the title, text and image (`site/og-image.png`, 1200 × 630) shown when someone shares a link.
+- **Missing pages** get `site/404.html` with a real 404 status, so search engines don't index made-up addresses.
+- **Google Search Console** (https://search.google.com/search-console): once setmaat.com is verified there, use it to see how the site shows up in Google and to ask Google to re-crawl a page after big changes.
 
 ## Deploying
 

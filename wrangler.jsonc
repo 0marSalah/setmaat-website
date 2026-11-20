@@ -6,7 +6,7 @@
   "compatibility_date": "2025-12-01",
   "assets": {
     "directory": "./site",
-    // Any unknown path shows the home page instead of an error.
-    "not_found_handling": "single-page-application"
+    // Unknown paths get site/404.html with a 404 status, so search engines don't index them as pages.
+    "not_found_handling": "404-page"
   }
 }
