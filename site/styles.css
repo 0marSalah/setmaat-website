@@ -81,10 +81,6 @@ h1, h2, h3, h4, p { margin: 0 }
 .card h3 { font-family: var(--display); font-weight: 800; font-size: 21px; line-height: 1.05; letter-spacing: .02em; text-transform: uppercase }
 .card p { font-size: 14.5px; line-height: 1.6; color: var(--ink-2) }
 
-/* Cards that lift on hover, with the site's offset ink shadow */
-.lift { transition: transform .22s var(--ease), box-shadow .22s ease }
-.lift:hover { transform: translate(-3px, -3px); box-shadow: 6px 6px 0 var(--ink) }
-
 .tags { display: flex; flex-wrap: wrap; gap: 6px }
 .tags span { padding: 4px 10px; font-size: 12px; font-weight: 600; color: var(--ink-2); background: var(--papyrus); border: 1px solid var(--line); border-radius: 999px }
 
@@ -243,8 +239,7 @@ h1, h2, h3, h4, p { margin: 0 }
 .pack-items { width: 100%; display: grid; grid-template-columns: 1fr; gap: 26px }
 @media (min-width: 760px) { .pack-items { grid-template-columns: repeat(3, 1fr) } }
 .pack-item { min-width: 0; display: flex; flex-direction: column; gap: 6px }
-.pack-tile { display: grid; place-items: center; aspect-ratio: 4 / 3; padding: 14px; border: 2px solid var(--ink); border-radius: 16px; box-shadow: 6px 6px 0 var(--ink); transition: box-shadow .2s ease }
-.pack-tile:hover { box-shadow: 9px 9px 0 var(--ink) }
+.pack-tile { display: grid; place-items: center; aspect-ratio: 4 / 3; padding: 14px; border: 2px solid var(--ink); border-radius: 16px; box-shadow: 6px 6px 0 var(--ink) }
 .pack-item .kicker { margin-top: 12px }
 .pack-name { font-family: var(--display); font-weight: 800; font-size: 28px; line-height: 1; text-transform: uppercase; color: var(--ink) }
 .pack-desc { margin-top: 2px; font-size: 14.5px; line-height: 1.55; color: var(--ink-2) }
@@ -252,8 +247,7 @@ h1, h2, h3, h4, p { margin: 0 }
 /* The two tools, in full */
 .products { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 44px }
 @media (min-width: 900px) { .products { grid-template-columns: 1fr 1fr } }
-.product { min-width: 0; display: flex; flex-direction: column; overflow: hidden; background: var(--white); border: 2px solid var(--ink); border-radius: 20px; transition: transform .22s var(--ease), box-shadow .22s ease }
-.product:hover { transform: translateY(-4px); box-shadow: 8px 8px 0 var(--ink) }
+.product { min-width: 0; display: flex; flex-direction: column; overflow: hidden; background: var(--white); border: 2px solid var(--ink); border-radius: 20px }
 .product-art { display: grid; place-items: center; aspect-ratio: 360 / 260; padding: 18px; background-size: 44px 44px; border-bottom: 2px solid var(--ink) }
 .product-art img { transition: transform .4s var(--ease) }
 .product:hover .product-art img { transform: scale(1.04) rotate(-1deg) }
@@ -466,6 +460,6 @@ h1, h2, h3, h4, p { margin: 0 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important }
   html { scroll-behavior: auto }
-  .btn:hover, .btn:active, .lift:hover, .product:hover, .product:hover .product-art img,
+  .btn:hover, .btn:active, .product:hover .product-art img,
   .principles li:hover img, .card:hover .star, .standards-chips span:hover, .news-row button:hover { transform: none }
 }
