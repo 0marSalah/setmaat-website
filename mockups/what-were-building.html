@@ -934,12 +934,12 @@
   /* product deep dives */
   .cards3 { display: grid; grid-template-columns: 1fr; gap: 22px; margin-top: 52px; }
   @media (min-width: 900px) { .cards3 { grid-template-columns: repeat(3, 1fr); } }
-  .fcard { border: 2px solid var(--ink); border-radius: 18px; background: var(--white); overflow: hidden; display: flex; flex-direction: column; min-width: 0; transition: transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s ease; }
-  .fcard:hover { transform: translate(-3px, -3px); box-shadow: 6px 6px 0 var(--ink); }
-  .fcard .vis { min-height: 200px; border-bottom: 2px solid var(--ink); padding: 20px; display: grid; place-items: center; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M24 14 L26 22 L34 24 L26 26 L24 34 L22 26 L14 24 L22 22 Z' fill='%23F4EEE2' fill-opacity='.22'/%3E%3C/svg%3E"); background-size: 36px 36px; }
-  .fcard .body { padding: 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
-  .fcard h4 { margin: 0; font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: 22px; line-height: 1.05; color: var(--ink); }
-  .fcard p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+  .wbc { border: 2px solid var(--ink); border-radius: 18px; background: var(--white); overflow: hidden; display: flex; flex-direction: column; min-width: 0; transition: transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s ease; }
+  .wbc:hover { transform: translate(-3px, -3px); box-shadow: 6px 6px 0 var(--ink); }
+  .wbc .wbc-vis { min-height: 200px; border-bottom: 2px solid var(--ink); padding: 20px; display: grid; place-items: center; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M24 14 L26 22 L34 24 L26 26 L24 34 L22 26 L14 24 L22 22 Z' fill='%23F4EEE2' fill-opacity='.22'/%3E%3C/svg%3E"); background-size: 36px 36px; }
+  .wbc .wbc-body { padding: 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .wbc h4 { margin: 0; font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: 22px; line-height: 1.05; color: var(--ink); }
+  .wbc p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
   .tree { width: 100%; max-width: 280px; display: flex; flex-direction: column; gap: 8px; }
   .tree .node { font-family: var(--body); font-weight: 700; font-size: 13px; background: var(--papyrus); color: var(--ink); border: 2px solid var(--ink); border-radius: 10px; padding: 8px 10px; display: flex; justify-content: space-between; gap: 8px; box-shadow: 3px 3px 0 var(--ink); }
   .tree .node.child { margin-left: 22px; position: relative; }
@@ -964,12 +964,12 @@
   .grant .row.revoked { opacity: .55; }
   .grant .row.revoked small { color: #A3412A; }
   .sync2 { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; }
-  .sync2 .t { width: 110px; aspect-ratio: 4 / 3; border: 2px solid var(--ink); border-radius: 12px; background: var(--papyrus); padding: 8px; display: grid; place-items: center; box-shadow: 3px 3px 0 var(--ink); }
-  .sync2 .t svg { width: 100%; height: 100%; }
+  .sync2 .s2t { width: 110px; aspect-ratio: 4 / 3; border: 2px solid var(--ink); border-radius: 12px; background: var(--papyrus); padding: 8px; display: grid; place-items: center; box-shadow: 3px 3px 0 var(--ink); }
+  .sync2 .s2t svg { width: 100%; height: 100%; }
   .sync2 .arrow { width: 60px; height: 24px; }
   .sync2 .arrow path { stroke-dasharray: 5 6; animation: wb-flow 1.2s linear infinite; }
-  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px; }
-  .tags span { font-family: var(--body); font-weight: 700; font-size: 13px; color: var(--ink); background: var(--papyrus); border: 2px solid var(--ink); border-radius: 999px; padding: 6px 12px; }
+  .wb-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px; }
+  .wb-tags span { font-family: var(--body); font-weight: 700; font-size: 13px; color: var(--ink); background: var(--papyrus); border: 2px solid var(--ink); border-radius: 999px; padding: 6px 12px; }
   .wb-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
 
   /* standards band */
@@ -989,14 +989,30 @@
 
   @media (prefers-reduced-motion: reduce) {
     .eq-art, .chip-in, .anywhere .flow, .sync2 .arrow path { animation: none !important; }
-    .sw, .sw::after, .fcard, .wb-toast, .std-chips span { transition: none !important; }
+    .sw, .sw::after, .wbc, .wb-toast, .std-chips span { transition: none !important; }
   }
   @media (min-width: 560px) { .goes { grid-template-columns: 1fr 130px 1fr; gap: 12px; } }
   .goes .bag { width: 130px; height: 130px; }
   .chip-in { font-size: 12.5px; padding: 9px 10px; line-height: 1.3; }
   .stage:has(.goes) { padding: 22px 18px; }
   .vis-art { max-width: none !important; width: 100%; }
-  .fcard .vis { padding: 16px; }
+  .wbc .wbc-vis { padding: 16px; }
+  /* Backpack diagrams: bag on top, dashed lines down to what it holds */
+  .dia { display: flex; flex-direction: column; align-items: center; }
+  .dia-bag { width: 150px; height: 150px; filter: drop-shadow(4px 4px 0 rgba(20,22,43,.35)); }
+  .dia-lines { display: block; width: 100%; height: 70px; overflow: visible; }
+  .dia-lines path { fill: none; stroke: var(--papyrus); stroke-width: 2.5; stroke-dasharray: 7 8; stroke-linecap: round; vector-effect: non-scaling-stroke; animation: wb-flow 1.6s linear infinite; }
+  .goes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; }
+  .goes-grid .chip-in { animation: none; justify-content: flex-start; min-height: 58px; font-size: 14px; line-height: 1.3; padding: 10px 12px; }
+  .dest-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; width: 100%; }
+  .dest { display: flex; flex-direction: column; align-items: center; gap: 8px; background: var(--cream); border: 2px solid var(--ink); border-radius: 14px; padding: 14px 8px 12px; box-shadow: 4px 4px 0 var(--ink); }
+  .dest svg { width: 56px; height: 56px; }
+  .dest span { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: 16px; letter-spacing: .02em; color: var(--ink); text-align: center; line-height: 1.05; }
+  .dia .export-row { margin-top: 18px; }
+  @media (max-width: 480px) { .dest-row { gap: 8px; } .dest span { font-size: 13px; } .dest svg { width: 44px; height: 44px; } .goes-grid .chip-in { font-size: 13px; } }
+  @media (prefers-reduced-motion: reduce) { .dia-lines path { animation: none; } }
+  /* product cards: always full width of their column */
+  .wbc { width: auto; }
 </style>
 
 <main id="page-orbit">
@@ -1034,10 +1050,15 @@
         <p>Assistant context and memory, notes and markdown files, sensitive records, a backup of the family photo archive.</p>
       </div>
       <div class="stage starry-f">
-        <div class="goes">
-          <div class="goes-col l"><span class="chip-in">Assistant context and memory</span><span class="chip-in">Notes and markdown files</span></div>
-          <svg class="bag" viewBox="0 0 240 240" aria-hidden="true"><use href="#art-bag"/></svg>
-          <div class="goes-col r"><span class="chip-in">Sensitive records</span><span class="chip-in">Family photo archive</span></div>
+        <div class="dia">
+          <svg class="dia-bag" viewBox="0 0 240 240" aria-hidden="true"><use href="#art-bag"/></svg>
+          <svg class="dia-lines" viewBox="0 0 1000 90" preserveAspectRatio="none" aria-hidden="true"><path d="M500 0 C500 52 250 38 250 90"/><path d="M500 0 C500 52 750 38 750 90"/></svg>
+          <div class="goes-grid">
+            <span class="chip-in">Assistant context and memory</span>
+            <span class="chip-in">Notes and markdown files</span>
+            <span class="chip-in">Sensitive records</span>
+            <span class="chip-in">A backup of the family photo archive</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1064,27 +1085,14 @@
         <p>Export it, import it elsewhere, sync it across servers you choose, or host it yourself at home or on-prem.</p>
       </div>
       <div class="stage starry">
-        <div class="anywhere">
-          <svg viewBox="0 0 520 250" aria-hidden="true">
-            <path class="flow" d="M150 125 C 190 125, 200 125, 220 125" stroke="#F4EEE2" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <path class="flow" d="M300 125 C 320 125, 330 125, 370 125" stroke="#F4EEE2" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <path class="flow" d="M260 190 C 260 205, 260 210, 260 222" stroke="#F4EEE2" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <g>
-              <rect x="20" y="80" width="130" height="90" rx="12" fill="#F4EEE2" stroke="#14162B" stroke-width="3"/>
-              <rect x="38" y="98" width="94" height="14" rx="4" fill="#14162B"/><circle cx="120" cy="105" r="3" fill="#D9A521"/>
-              <rect x="38" y="120" width="94" height="14" rx="4" fill="#14162B"/><circle cx="120" cy="127" r="3" fill="#137F7B"/>
-              <text x="85" y="157" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="13" fill="#14162B">Home server</text>
-            </g>
-            <g>
-              <rect x="370" y="80" width="130" height="90" rx="12" fill="#F4EEE2" stroke="#14162B" stroke-width="3"/>
-              <rect x="388" y="98" width="94" height="14" rx="4" fill="#14162B"/><circle cx="470" cy="105" r="3" fill="#D9A521"/>
-              <rect x="388" y="120" width="94" height="14" rx="4" fill="#14162B"/><circle cx="470" cy="127" r="3" fill="#137F7B"/>
-              <text x="435" y="157" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="13" fill="#14162B">Server you choose</text>
-            </g>
-            <use href="#art-bag" x="200" y="55" width="120" height="120"/>
-            <rect x="196" y="222" width="128" height="26" rx="13" fill="#D9A521" stroke="#14162B" stroke-width="3"/>
-            <text x="260" y="240" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="12.5" fill="#14162B">Export &#183; Import</text>
-          </svg>
+        <div class="dia">
+          <svg class="dia-bag" viewBox="0 0 240 240" aria-hidden="true"><use href="#art-bag"/></svg>
+          <svg class="dia-lines" viewBox="0 0 1000 90" preserveAspectRatio="none" aria-hidden="true"><path d="M500 0 C500 52 167 38 167 90"/><path d="M500 0 V90"/><path d="M500 0 C500 52 833 38 833 90"/></svg>
+          <div class="dest-row">
+            <div class="dest"><svg viewBox="0 0 80 80" aria-hidden="true"><path d="M14 40 L40 17 L66 40 V66 H14 Z" fill="#F4EEE2" stroke="#14162B" stroke-width="3" stroke-linejoin="round"/><path d="M8 44 L40 15 L72 44" fill="none" stroke="#14162B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="33" y="47" width="14" height="19" rx="2" fill="#D9A521" stroke="#14162B" stroke-width="2.5"/><rect x="20" y="46" width="9" height="9" rx="1.5" fill="#23408E"/><rect x="51" y="46" width="9" height="9" rx="1.5" fill="#23408E"/></svg><span>At home</span></div>
+            <div class="dest"><svg viewBox="0 0 80 80" aria-hidden="true"><rect x="18" y="12" width="44" height="56" rx="4" fill="#F4EEE2" stroke="#14162B" stroke-width="3"/><g fill="#137F7B"><rect x="25" y="20" width="9" height="8" rx="1.5"/><rect x="46" y="20" width="9" height="8" rx="1.5"/><rect x="25" y="34" width="9" height="8" rx="1.5"/><rect x="46" y="34" width="9" height="8" rx="1.5"/></g><rect x="34" y="50" width="12" height="18" rx="2" fill="#D9A521" stroke="#14162B" stroke-width="2.5"/><path d="M10 68 H70" stroke="#14162B" stroke-width="3" stroke-linecap="round"/></svg><span>On-prem</span></div>
+            <div class="dest"><svg viewBox="0 0 80 80" aria-hidden="true"><rect x="14" y="12" width="52" height="56" rx="8" fill="#F4EEE2" stroke="#14162B" stroke-width="3"/><rect x="22" y="21" width="36" height="10" rx="3" fill="#14162B"/><rect x="22" y="36" width="36" height="10" rx="3" fill="#14162B"/><rect x="22" y="51" width="36" height="10" rx="3" fill="#14162B"/><circle cx="51" cy="26" r="2.4" fill="#D9A521"/><circle cx="51" cy="41" r="2.4" fill="#137F7B"/><circle cx="51" cy="56" r="2.4" fill="#D9A521"/></svg><span>Servers you choose</span></div>
+          </div>
           <div class="export-row"><button class="mini-btn" type="button" id="wb-export">Export my backpack</button><span class="wb-toast" id="wb-toast" role="status" aria-live="polite">Backpack exported</span></div>
         </div>
       </div>
@@ -1099,33 +1107,33 @@
       <p class="desc">PWS is storage built on the Portable Web Spaces specification from the W3C Credentials Community Group. Each space belongs to its owner, and every app, model or agent only gets the access it was granted.</p>
     </div>
     <div class="cards3">
-      <article class="fcard">
-        <div class="vis" style="background-color:var(--faience)">
+      <article class="wbc">
+        <div class="wbc-vis" style="background-color:var(--faience)">
           <div class="tree" aria-hidden="true">
             <div class="node">Personal space<span class="perm only">Yours</span></div>
             <div class="node child">Notes<span class="perm">Assistant can read</span></div>
             <div class="node child">Health records<span class="perm only">Only you</span></div>
           </div>
         </div>
-        <div class="body"><h4>Spaces and Collections</h4><p>Organise data into Spaces and Collections, each with its own permissions</p></div>
+        <div class="wbc-body"><h4>Spaces and Collections</h4><p>Organise data into Spaces and Collections, each with its own permissions</p></div>
       </article>
-      <article class="fcard">
-        <div class="vis" style="background-color:var(--lapis)">
+      <article class="wbc">
+        <div class="wbc-vis" style="background-color:var(--lapis)">
           <div class="cipher">
             <div class="note-card" id="wb-note"><small id="wb-note-who">You see</small><div class="txt" id="wb-note-txt">Trip planning: book the train to Alexandria for Friday.</div></div>
             <button class="mini-btn" type="button" id="wb-cipher" aria-pressed="false">See what the server sees</button>
           </div>
         </div>
-        <div class="body"><h4>Encrypted collections</h4><p>Encrypt collections so the server storing them can't read them</p></div>
+        <div class="wbc-body"><h4>Encrypted collections</h4><p>Encrypt collections so the server storing them can't read them</p></div>
       </article>
-      <article class="fcard">
-        <div class="vis" style="background-color:var(--faience)">
+      <article class="wbc">
+        <div class="wbc-vis" style="background-color:var(--faience)">
           <div class="vis-art" aria-hidden="true"><svg viewBox="0 0 360 260"><use href="#art-spaces"/></svg></div>
         </div>
-        <div class="body"><h4>Export, import and sync</h4><p>Export a space and import it elsewhere, or sync it across servers you choose</p></div>
+        <div class="wbc-body"><h4>Export, import and sync</h4><p>Export a space and import it elsewhere, or sync it across servers you choose</p></div>
       </article>
     </div>
-    <div class="tags"><span>Open source</span><span>Open standard</span><span>W3C CCG</span><span>Capability-based access</span><span>Self-hostable</span></div>
+    <div class="wb-tags"><span>Open source</span><span>Open standard</span><span>W3C CCG</span><span>Capability-based access</span><span>Self-hostable</span></div>
     <div class="wb-links"><a class="btn btn-primary" href="https://w3c-ccg.github.io/portable-web-spaces-spec/">Read the spec</a><a class="btn btn-ghost" href="https://github.com/interop-alliance/web-spaces-server">View the server code</a></div>
   </div></section>
 
@@ -1137,33 +1145,33 @@
       <p class="desc">Freewallet runs in your browser and keeps your keys on your side. There is no login server holding your account: you unlock it with a passkey or a passphrase, and from there you hand out exactly the access each app or AI agent needs.</p>
     </div>
     <div class="cards3">
-      <article class="fcard">
-        <div class="vis" style="background-color:var(--lapis)">
+      <article class="wbc">
+        <div class="wbc-vis" style="background-color:var(--lapis)">
           <div class="vis-art" aria-hidden="true"><svg viewBox="0 0 360 260"><use href="#art-wallet"/></svg></div>
         </div>
-        <div class="body"><h4>Your keys, on your side</h4><p>Hold your DIDs, verifiable credentials and keys yourself, not on a platform</p></div>
+        <div class="wbc-body"><h4>Your keys, on your side</h4><p>Hold your DIDs, verifiable credentials and keys yourself, not on a platform</p></div>
       </article>
-      <article class="fcard">
-        <div class="vis" style="background-color:var(--faience)">
+      <article class="wbc">
+        <div class="wbc-vis" style="background-color:var(--faience)">
           <div class="grant">
             <div class="row" id="wb-grant"><b>Notes assistant</b><small id="wb-grant-s">Read &middot; Notes &middot; scoped</small></div>
             <button class="mini-btn" type="button" id="wb-revoke">Revoke access</button>
           </div>
         </div>
-        <div class="body"><h4>Scoped, revocable access</h4><p>Give an app or AI agent scoped, revocable access instead of handing over everything</p></div>
+        <div class="wbc-body"><h4>Scoped, revocable access</h4><p>Give an app or AI agent scoped, revocable access instead of handing over everything</p></div>
       </article>
-      <article class="fcard">
-        <div class="vis" style="background-color:var(--lapis)">
+      <article class="wbc">
+        <div class="wbc-vis" style="background-color:var(--lapis)">
           <div class="sync2" aria-hidden="true">
-            <div class="t"><svg viewBox="0 0 360 260"><use href="#art-wallet"/></svg></div>
+            <div class="s2t"><svg viewBox="0 0 360 260"><use href="#art-wallet"/></svg></div>
             <svg class="arrow" viewBox="0 0 60 24"><path d="M2 12 H50" stroke="#F4EEE2" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M44 5 L54 12 L44 19" stroke="#F4EEE2" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" style="animation:none;stroke-dasharray:none"/></svg>
-            <div class="t"><svg viewBox="0 0 360 260"><use href="#art-spaces"/></svg></div>
+            <div class="s2t"><svg viewBox="0 0 360 260"><use href="#art-spaces"/></svg></div>
           </div>
         </div>
-        <div class="body"><h4>Syncs to your spaces</h4><p>Syncs your wallet to PWS Spaces you choose</p></div>
+        <div class="wbc-body"><h4>Syncs to your spaces</h4><p>Syncs your wallet to PWS Spaces you choose</p></div>
       </article>
     </div>
-    <div class="tags"><span>Open source</span><span>DIDs</span><span>Verifiable credentials</span><span>Passkeys</span><span>Capabilities (ZCAP)</span></div>
+    <div class="wb-tags"><span>Open source</span><span>DIDs</span><span>Verifiable credentials</span><span>Passkeys</span><span>Capabilities (ZCAP)</span></div>
     <div class="wb-links"><a class="btn btn-primary" href="https://freewallet.me">Visit freewallet.me</a><a class="btn btn-ghost" href="https://github.com/interop-alliance/freewallet">View the code</a></div>
   </div></section>
 
@@ -1230,7 +1238,7 @@
     if (f) f.addEventListener('submit', function (e) { e.preventDefault(); document.getElementById('news-thanks').textContent = "Thanks! Sign-ups open soon, so your address wasn't saved yet."; });
     var reduce = false; try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
     if (reduce || !('IntersectionObserver' in window)) return;
-    var els = document.querySelectorAll('.wb-head, .feat-copy, .stage, .fcard, .tags, .std h2, .std-chips, .next h2');
+    var els = document.querySelectorAll('.wb-head, .feat-copy, .stage, .wbc, .wb-tags, .std h2, .std-chips, .next h2');
     document.body.classList.add('anim-on');
     els.forEach(function (el) { el.classList.add('reveal'); });
     var io = new IntersectionObserver(function (entries) { entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }); }, { rootMargin: '0px 0px -8% 0px', threshold: .08 });
