@@ -17,12 +17,10 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
+# Upload and deploy must be separate jobs: deploy-pages can't see an artifact uploaded earlier in its own job.
 jobs:
-  deploy:
+  upload:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
 
@@ -32,5 +30,12 @@ jobs:
         with:
           path: site
 
+  deploy:
+    needs: upload
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - id: deployment
         uses: actions/deploy-pages@v5
