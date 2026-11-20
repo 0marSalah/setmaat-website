@@ -841,6 +841,10 @@
   .o-top .btn { min-height: 44px; padding: 0 22px; font-size: 15px; border-radius: 10px; }
   #page-orbit section[id] { scroll-margin-top: 90px; }
   @media (max-width: 860px) { .o-top .links { display: none; } }
+  /* Footer: stronger call to action */
+  .news-block .news-cta { margin: 0; font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: clamp(34px, 5vw, 56px); line-height: .95; color: var(--papyrus); }
+  .news-block .news-title { font-size: 17px !important; font-weight: 400 !important; color: #C9C6D6 !important; margin-bottom: 8px !important; }
+  .wb-more { margin-top: 22px; }
 </style>
 
 <main id="page-orbit">
@@ -988,6 +992,7 @@
   <section class="o-sec cream" id="work"><div class="wrap">
     <h2 class="o-h2">What we're building</h2>
     <p class="o-intro">One product for AI that is sized to the people it serves, made of two open tools you can also use on their own.</p>
+    <a class="btn btn-ghost wb-more" href="what-were-building.html">Learn more &rarr;</a>
 
 
 
@@ -1174,6 +1179,7 @@
 
   <footer class="o-foot"><div class="wrap">
     <div class="news-block">
+      <h2 class="news-cta">Follow what we build</h2>
       <p class="news-title">Monthly letter: releases, standards news, learning circles.</p>
       <form class="news-form" id="news-form" novalidate data-news>
         <label for="news-email">Email address</label>
