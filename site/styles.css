@@ -1,0 +1,471 @@
+/* SetMaat site styles, shared by both pages.
+   Sections: tokens and base, buttons, shared layout, header, home page, What we're building page, footer, motion. */
+
+/* ---------- Tokens and base ---------- */
+:root {
+  color-scheme: light;
+  --papyrus: #F4EEE2;
+  --papyrus-2: #EAE1CF;
+  --cream: #FBF7EE;
+  --ink: #14162B;
+  --ink-2: #3A3C52;
+  --ink-3: #6A6656;
+  --lapis: #23408E;
+  --lapis-dark: #172C66;
+  --gold: #D9A521;
+  --faience: #137F7B;
+  --clay: #B5482A;
+  --white: #FFFFFF;
+  --line: #DED6C4;
+  --display: 'Big Shoulders Display', Impact, sans-serif;
+  --body: Inter, system-ui, sans-serif;
+  --mono: ui-monospace, 'SF Mono', Menlo, monospace;
+  /* Faint four-point stars, laid over coloured panels */
+  --stars: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M24 14 L26 22 L34 24 L26 26 L24 34 L22 26 L14 24 L22 22 Z' fill='%23F4EEE2' fill-opacity='.22'/%3E%3C/svg%3E");
+  --ease: cubic-bezier(.2, .8, .2, 1);
+}
+
+* { box-sizing: border-box }
+/* scroll-padding keeps anchor targets from landing underneath the sticky header */
+html { scroll-behavior: smooth; scroll-padding-top: 80px }
+body { margin: 0; font-family: var(--body); color: var(--ink); background: var(--papyrus); -webkit-font-smoothing: antialiased }
+a { color: var(--lapis) }
+img, svg { display: block }
+h1, h2, h3, h4, p { margin: 0 }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)) }
+@media (min-width: 900px) { .wrap { padding-left: 56px; padding-right: 56px } }
+
+/* ---------- Buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; font-family: var(--body); font-weight: 600; font-size: 15px; text-decoration: none; border: 2px solid var(--ink); border-radius: 10px; cursor: pointer; transition: transform .18s var(--ease), box-shadow .2s ease, background-color .2s ease, color .2s ease }
+.btn:hover { transform: translateY(-2px) }
+.btn:active { transform: translateY(0) scale(.97) }
+.btn-primary { background: var(--lapis); color: var(--white); border-color: var(--lapis) }
+.btn-faience { background: var(--faience); color: var(--white); border-color: var(--faience) }
+.btn-primary:hover, .btn-faience:hover { box-shadow: 4px 4px 0 var(--gold) }
+.btn-ghost { background: transparent; color: var(--ink) }
+.btn-dark { background: var(--ink); color: var(--papyrus); border-color: var(--ink) }
+.btn-ghost:hover, .btn-dark:hover { box-shadow: 4px 4px 0 var(--ink) }
+
+/* Small gold button inside the illustrations on the What we're building page */
+.mini-btn { align-self: center; padding: 7px 12px; font-family: var(--body); font-weight: 700; font-size: 13px; color: var(--ink); background: var(--gold); border: 2px solid var(--ink); border-radius: 10px; box-shadow: 3px 3px 0 var(--ink); cursor: pointer; transition: transform .15s, box-shadow .15s }
+.mini-btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--ink) }
+.mini-btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink) }
+.mini-btn:focus-visible { outline-color: var(--papyrus) }
+
+/* ---------- Shared layout ---------- */
+.sec { padding-block: 108px; border-bottom: 2px solid var(--ink) }
+@media (max-width: 640px) { .sec { padding-block: 72px } }
+.cream { background: var(--cream) }
+.papyrus { background: var(--papyrus) }
+.white { background: var(--white) }
+
+.sec-title { font-family: var(--display); font-weight: 800; text-transform: uppercase; letter-spacing: .005em; font-size: clamp(34px, 5vw, 56px); line-height: .95; color: var(--ink); text-wrap: balance }
+.sec-intro { margin-top: 16px; max-width: 58ch; font-size: 17px; line-height: 1.6; color: var(--ink-2) }
+.kicker { font-size: 12px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--lapis) }
+
+/* Coloured panels behind the illustrations. Add .starry for the star pattern. */
+.tone-lapis { background-color: var(--lapis) }
+.tone-faience { background-color: var(--faience) }
+.tone-clay { background-color: var(--clay) }
+.tone-gold { background-color: var(--gold) }
+.starry { background-image: var(--stars); background-size: 40px 40px }
+/* An illustration that fills its panel */
+.art { width: 100%; height: 100% }
+
+/* Three-up cards: programs, and the backpack's three points */
+.card-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 40px }
+@media (min-width: 760px) { .card-grid { grid-template-columns: repeat(3, 1fr) } }
+.card { min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 26px; background: var(--white); border: 2px solid var(--ink); border-radius: 16px }
+.card h3 { font-family: var(--display); font-weight: 800; font-size: 21px; line-height: 1.05; letter-spacing: .02em; text-transform: uppercase }
+.card p { font-size: 14.5px; line-height: 1.6; color: var(--ink-2) }
+
+/* Cards that lift on hover, with the site's offset ink shadow */
+.lift { transition: transform .22s var(--ease), box-shadow .22s ease }
+.lift:hover { transform: translate(-3px, -3px); box-shadow: 6px 6px 0 var(--ink) }
+
+.tags { display: flex; flex-wrap: wrap; gap: 6px }
+.tags span { padding: 4px 10px; font-size: 12px; font-weight: 600; color: var(--ink-2); background: var(--papyrus); border: 1px solid var(--line); border-radius: 999px }
+
+/* ---------- Header ---------- */
+.topbar { position: sticky; top: 0; z-index: 40; background: rgba(244, 238, 226, .86); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line) }
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 12px }
+.brand { display: flex; align-items: center; gap: 10px; flex: 0 0 auto; font-family: var(--display); font-weight: 800; font-size: 24px; letter-spacing: .02em; text-transform: uppercase; color: var(--ink); text-decoration: none }
+.brand img { width: 34px; height: 33px }
+.topbar nav { display: flex; gap: 32px; font-size: 15px; font-weight: 500 }
+.topbar nav a { position: relative; padding: 6px 2px; color: var(--ink-2); text-decoration: none; transition: color .2s ease }
+.topbar nav a:hover { color: var(--ink) }
+/* A faint underline grows in on hover; the current page or section gets a solid gold one */
+.topbar nav a::before { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; border-radius: 2px; background: currentColor; opacity: .25; transform: scaleX(0); transform-origin: left; transition: transform .25s var(--ease) }
+.topbar nav a:hover::before { transform: scaleX(1) }
+.topbar nav a[aria-current] { color: var(--ink); font-weight: 600 }
+.topbar nav a[aria-current]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; border-radius: 2px; background: var(--gold) }
+.topbar .btn { min-height: 44px; padding: 0 22px }
+@media (max-width: 860px) { .topbar nav { display: none } }
+@media (max-width: 400px) {
+  .brand { gap: 8px; font-size: 21px }
+  .topbar .btn { padding: 0 14px; font-size: 14px }
+}
+
+/* ---------- Home: hero ---------- */
+.hero { position: relative; overflow: hidden; background: linear-gradient(180deg, var(--cream), var(--papyrus)); border-bottom: 2px solid var(--ink) }
+.hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr; gap: 56px; align-items: center; padding-block: 56px 96px }
+@media (min-width: 900px) { .hero-grid { grid-template-columns: 1.2fr .8fr; gap: 48px } }
+.hero-copy { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 22px }
+.hero h1 { font-family: var(--display); font-weight: 800; font-size: clamp(44px, 6.2vw, 82px); line-height: 1; letter-spacing: .005em; color: var(--ink) }
+/* "backpack", in lapis over a gold underline */
+.hero h1 .hl { position: relative; white-space: nowrap; color: var(--lapis) }
+.hero h1 .hl::after { content: ""; position: absolute; left: -.02em; right: -.02em; bottom: .07em; height: .12em; background: var(--gold); z-index: -1 }
+.hero-sub { max-width: 52ch; font-size: 18px; line-height: 1.6; color: var(--ink-2) }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px }
+
+/* Wallet demo: a phone on a tilted, starry lapis card. site.js moves it through its steps. */
+.phone { position: relative; justify-self: center; padding: 26px 34px }
+.phone::before { content: ""; position: absolute; inset: 0; background-color: var(--lapis); background-image: var(--stars); background-size: 40px 40px; border: 2px solid var(--ink); border-radius: 30px; transform: rotate(-4deg) }
+.device { position: relative; width: 290px; max-width: 72vw; aspect-ratio: 290 / 600; padding: 11px; background: var(--ink); border-radius: 46px; box-shadow: 12px 12px 0 var(--gold); animation: phone-float 6s ease-in-out infinite }
+@keyframes phone-float { 0%, 100% { translate: 0 0 } 50% { translate: 0 -9px } }
+.notch { position: absolute; top: 19px; left: 50%; z-index: 3; width: 92px; height: 26px; background: var(--ink); border-radius: 14px; transform: translateX(-50%) }
+/* The clock sits centred in the space left of the notch */
+.clock { position: absolute; top: 19px; left: 11px; z-index: 3; width: calc(50% - 57px); height: 26px; line-height: 26px; text-align: center; font-weight: 700; font-size: 12px; color: var(--ink) }
+.screen { position: relative; height: 100%; overflow: hidden; background: var(--papyrus); border-radius: 36px }
+
+/* Screens slide in from the right. Steps: 0 locked, 1 home, 2 home with the request sheet, 3 access list, 4 after revoking. */
+.sc { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 10px; padding: 54px 15px 15px; opacity: 0; transform: translateX(18px); transition: opacity .4s ease, transform .4s ease }
+.screen[data-step="0"] .sc-lock,
+.screen[data-step="1"] .sc-home,
+.screen[data-step="2"] .sc-home,
+.screen[data-step="3"] .sc-access,
+.screen[data-step="4"] .sc-access { opacity: 1; transform: none }
+/* Leave room for the toast above the access list */
+.screen[data-step="3"] .sc-access,
+.screen[data-step="4"] .sc-access { padding-top: 92px }
+
+.sc-top { display: flex; justify-content: space-between; align-items: center }
+.sc-app { font-weight: 700; font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: var(--lapis) }
+.pill { padding: 2px 8px; font-weight: 700; font-size: 11px; color: var(--white); background: var(--faience); border: 2px solid var(--ink); border-radius: 999px }
+.pill.locked { background: var(--ink); color: var(--gold) }
+.sc-title { font-family: var(--display); font-weight: 800; font-size: 32px; line-height: 1; text-transform: uppercase; color: var(--ink) }
+.lock-ring { align-self: center; display: grid; place-items: center; width: 96px; height: 96px; margin-top: 36px; border: 2px solid var(--ink); border-radius: 50%; background-size: 24px 24px; box-shadow: 4px 4px 0 var(--ink) }
+.lock-ring svg { width: 46px; height: 46px }
+.lock-title { margin-top: 18px; text-align: center }
+.lock-text { padding: 0 6px; text-align: center; font-size: 12.5px; line-height: 1.5; color: var(--ink-2) }
+.sc-cta { margin-top: auto; padding: 11px; text-align: center; font-weight: 700; font-size: 13.5px; color: var(--ink); background: var(--gold); border: 2px solid var(--ink); border-radius: 12px; box-shadow: 3px 3px 0 var(--ink) }
+.sc-card { display: grid; place-items: center; aspect-ratio: 360 / 250; padding: 8px; border: 2px solid var(--ink); border-radius: 14px; background-size: 28px 28px; box-shadow: 4px 4px 0 var(--ink) }
+.sc-row { display: flex; align-items: center; gap: 10px; padding: 8px 11px; background: var(--white); border: 2px solid var(--ink); border-radius: 12px }
+.sc-row::before { content: ""; flex: 0 0 auto; width: 9px; height: 9px; background: var(--gold); transform: rotate(45deg) }
+.sc-row div { flex: 1; min-width: 0; display: flex; flex-direction: column }
+.sc-row b { font-size: 12.5px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.sc-row small { font-weight: 500; font-size: 11px; color: var(--ink-3) }
+.ok { font-weight: 700; font-size: 11px; color: var(--faience) }
+.tog { position: relative; flex: 0 0 auto; width: 36px; height: 22px; background: var(--line); border: 2px solid var(--ink); border-radius: 999px; transition: background-color .3s }
+.tog::after { content: ""; position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; background: var(--white); border: 1.5px solid var(--ink); border-radius: 50%; transition: left .3s }
+.tog.on { background: var(--faience) }
+.tog.on::after { left: 16px }
+/* Step 4: the Notes assistant's access has been revoked */
+.screen[data-step="4"] .tog.revocable { background: var(--line) }
+.screen[data-step="4"] .tog.revocable::after { left: 2px }
+
+/* The app's request, as a bottom sheet over a dimmed screen */
+.scrim { position: absolute; inset: 0; background: rgba(20, 22, 43, .35); opacity: 0; pointer-events: none; transition: opacity .35s }
+.screen[data-step="2"] .scrim { opacity: 1 }
+.sheet { position: absolute; left: 8px; right: 8px; bottom: 8px; padding: 10px 14px 14px; background: var(--cream); border: 2px solid var(--ink); border-radius: 20px; transform: translateY(125%); transition: transform .45s cubic-bezier(.2, .9, .3, 1.1) }
+.screen[data-step="2"] .sheet { transform: none }
+.grab { width: 36px; height: 4px; margin: 0 auto 10px; background: var(--ink-3); border-radius: 4px; opacity: .5 }
+.sheet-title { font-size: 14px; line-height: 1.35; color: var(--ink) }
+.sheet-title b { font-weight: 800 }
+.sheet-scope { margin-top: 6px; font-size: 11.5px; color: var(--ink-3) }
+.sheet-btns { display: flex; gap: 6px; margin-top: 12px }
+.sheet-btn { flex: 1; padding: 8px 0; text-align: center; font-weight: 700; font-size: 13px; color: var(--papyrus); background: var(--ink); border: 2px solid var(--ink); border-radius: 8px }
+.sheet-btn.ghost { color: var(--ink); background: var(--white) }
+
+.toast { position: absolute; top: 50px; left: 50%; z-index: 4; max-width: calc(100% - 24px); padding: 7px 12px; font-weight: 700; font-size: 11.5px; color: var(--papyrus); background: var(--ink); border: 2px solid var(--gold); border-radius: 999px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0; transform: translate(-50%, -260%); transition: transform .4s cubic-bezier(.2, .9, .3, 1.2), opacity .25s ease }
+.screen[data-step="3"] .toast,
+.screen[data-step="4"] .toast { opacity: 1; transform: translate(-50%, 0) }
+
+/* A finger tap on the control the demo is about to press */
+.tap { position: absolute; z-index: 6; width: 36px; height: 36px; background: rgba(217, 165, 33, .55); border: 2px solid var(--ink); border-radius: 50%; opacity: 0; pointer-events: none }
+.tap.go { animation: tap .65s ease-out }
+@keyframes tap {
+  0% { transform: translate(-50%, -50%) scale(.4); opacity: 0 }
+  30% { transform: translate(-50%, -50%) scale(1); opacity: 1 }
+  100% { transform: translate(-50%, -50%) scale(1.7); opacity: 0 }
+}
+
+/* ---------- Home: Set + Maat ---------- */
+.name-grid { display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center }
+@media (min-width: 900px) { .name-grid { grid-template-columns: 1.1fr .9fr; gap: 56px } }
+.name-copy { min-width: 0 }
+.name-copy .sec-title { margin-bottom: 18px }
+.name-copy p { max-width: 52ch; font-size: 18px; line-height: 1.65; color: var(--ink-2) }
+
+/* The scale starts tipped toward the platforms, the feather drops in, and it settles level */
+.scale { width: min(500px, 100%); height: auto; margin: 0 auto; overflow: visible }
+.scale .beam { transform-origin: 230px 110px; animation: scale-beam 10s ease-in-out infinite }
+.scale .pan-l { transform-origin: 80px 110px; animation: scale-pan 10s ease-in-out infinite }
+.scale .pan-r { transform-origin: 380px 110px; animation: scale-pan 10s ease-in-out infinite }
+.scale .feather { animation: scale-drop 10s ease-in-out infinite }
+@keyframes scale-beam { 0%, 16% { transform: rotate(-11deg) } 34%, 84% { transform: rotate(0deg) } 100% { transform: rotate(-11deg) } }
+@keyframes scale-pan { 0%, 16% { transform: rotate(11deg) } 34%, 84% { transform: rotate(0deg) } 100% { transform: rotate(11deg) } }
+@keyframes scale-drop {
+  0%, 6% { transform: translateY(-150px); opacity: 0 }
+  8% { opacity: 1 }
+  18%, 86% { transform: translateY(0); opacity: 1 }
+  95%, 100% { transform: translateY(0); opacity: 0 }
+}
+
+/* ---------- Home: Why we exist ---------- */
+.why { text-align: center }
+.why .sec-title { margin-bottom: 24px }
+.statement { max-width: 46ch; margin: 0 auto; font-size: clamp(21px, 2.8vw, 28px); line-height: 1.45; color: var(--ink) }
+.statement mark { padding: 0 2px; background: linear-gradient(transparent 62%, rgba(217, 165, 33, .55) 62%); color: var(--lapis); font-weight: 600 }
+
+/* ---------- Home: principles strip ---------- */
+.principles { background: var(--gold); border-bottom: 2px solid var(--ink) }
+.principles ul { max-width: 1240px; margin: 0 auto; padding: 22px max(16px, env(safe-area-inset-left, 0px)); list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 40px }
+.principles li { display: flex; align-items: center; gap: 12px; font-family: var(--display); font-weight: 800; font-size: 24px; letter-spacing: .03em; text-transform: uppercase; color: var(--ink) }
+.principles img { flex: 0 0 auto; width: 18px; height: 18px; transition: transform .5s var(--ease) }
+.principles li:hover img { transform: rotate(90deg) scale(1.15) }
+
+/* ---------- Home: What we do ---------- */
+.program-n { font-family: var(--display); font-weight: 900; font-size: 38px; line-height: 1; color: var(--gold) }
+
+/* ---------- Home: What we're building ---------- */
+.more-link { margin-top: 22px }
+
+/* The backpack, with dashed lines down to the three things it holds */
+.pack { max-width: 1000px; margin: 48px auto 0; display: flex; flex-direction: column; align-items: center }
+.pack-bag { width: 200px; height: 200px; margin: 10px }
+.pack-lines { display: none; width: 100%; height: 110px; overflow: visible }
+.pack-line { width: 4px; height: 64px; margin: 4px 0 8px }
+.pack-lines path, .pack-line path { fill: none; stroke: var(--ink); stroke-width: 2.5; stroke-dasharray: 7 8; stroke-linecap: round; vector-effect: non-scaling-stroke }
+@media (min-width: 760px) { .pack-lines { display: block } .pack-line { display: none } }
+.pack-items { width: 100%; display: grid; grid-template-columns: 1fr; gap: 26px }
+@media (min-width: 760px) { .pack-items { grid-template-columns: repeat(3, 1fr) } }
+.pack-item { min-width: 0; display: flex; flex-direction: column; gap: 6px }
+.pack-tile { display: grid; place-items: center; aspect-ratio: 4 / 3; padding: 14px; border: 2px solid var(--ink); border-radius: 16px; box-shadow: 6px 6px 0 var(--ink); transition: box-shadow .2s ease }
+.pack-tile:hover { box-shadow: 9px 9px 0 var(--ink) }
+.pack-item .kicker { margin-top: 12px }
+.pack-name { font-family: var(--display); font-weight: 800; font-size: 28px; line-height: 1; text-transform: uppercase; color: var(--ink) }
+.pack-desc { margin-top: 2px; font-size: 14.5px; line-height: 1.55; color: var(--ink-2) }
+
+/* The two tools, in full */
+.products { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 44px }
+@media (min-width: 900px) { .products { grid-template-columns: 1fr 1fr } }
+.product { min-width: 0; display: flex; flex-direction: column; overflow: hidden; background: var(--white); border: 2px solid var(--ink); border-radius: 20px; transition: transform .22s var(--ease), box-shadow .22s ease }
+.product:hover { transform: translateY(-4px); box-shadow: 8px 8px 0 var(--ink) }
+.product-art { display: grid; place-items: center; aspect-ratio: 360 / 260; padding: 18px; background-size: 44px 44px; border-bottom: 2px solid var(--ink) }
+.product-art img { transition: transform .4s var(--ease) }
+.product:hover .product-art img { transform: scale(1.04) rotate(-1deg) }
+.product-head { padding: 22px 24px 0 }
+.product h3 { margin-top: 4px; font-family: var(--display); font-weight: 800; font-size: 36px; line-height: 1; text-transform: uppercase; color: var(--ink) }
+.product-body { flex: 1; display: flex; flex-direction: column; gap: 14px; padding: 24px }
+.product-lead { font-weight: 600; font-size: 16.5px; line-height: 1.45; color: var(--ink) }
+.product-desc { font-size: 14.5px; line-height: 1.6; color: var(--ink-2) }
+.product ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px }
+.product li { position: relative; padding-left: 22px; font-size: 14px; line-height: 1.5; color: var(--ink) }
+.product li::before { content: ""; position: absolute; left: 0; top: .45em; width: 10px; height: 10px; background: var(--gold); border-radius: 3px }
+.product-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 6px }
+.product-links .btn { min-height: 42px; padding: 0 18px; font-size: 14px }
+
+/* ---------- Home: Agentic Digital Backpack Platform ---------- */
+.backpack-lead { max-width: 58ch; margin-top: 18px; font-size: 21px; font-weight: 600; line-height: 1.4; color: var(--lapis) }
+.backpack-lead + .sec-intro { margin-top: 10px }
+.card .star { width: 26px; height: 26px; transition: transform .5s var(--ease) }
+.card:hover .star { transform: rotate(72deg) scale(1.1) }
+
+/* ---------- Home: adopters ---------- */
+.adopters { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 40px 0 0; padding: 0; list-style: none }
+@media (min-width: 640px) { .adopters { grid-template-columns: 1fr 1fr } }
+@media (min-width: 980px) { .adopters { grid-template-columns: repeat(3, 1fr) } }
+.adopter { min-width: 0; display: flex; flex-direction: column; gap: 10px; padding: 22px; background: var(--white); border: 2px solid var(--ink); border-radius: 16px }
+.adopter h3 { font-family: var(--display); font-weight: 800; font-size: 20px; line-height: 1.05; letter-spacing: .02em; text-transform: uppercase }
+.adopter p { font-size: 14px; line-height: 1.55; color: var(--ink-2) }
+.adopter-sites { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13.5px; font-weight: 700 }
+.adopter-sites a { text-decoration: none; overflow-wrap: anywhere }
+.adopter-sites a:hover { text-decoration: underline; text-underline-offset: 3px }
+
+/* ---------- Home: people ---------- */
+.people { padding-block: 110px }
+.people .sec-title { font-size: clamp(40px, 6vw, 72px) }
+.people .sec-intro { font-size: 19px }
+.group-label { display: flex; align-items: center; gap: 14px; margin-top: 52px; font-family: var(--display); font-weight: 800; font-size: 20px; letter-spacing: .04em; text-transform: uppercase; color: var(--lapis) }
+.group-label::after { content: ""; flex: 1; height: 2px; background: var(--ink) }
+.people-grid { display: grid; grid-template-columns: 1fr; gap: 22px; margin-top: 26px }
+@media (min-width: 720px) { .people-grid { grid-template-columns: repeat(3, 1fr) } }
+.person { min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 44px 28px 36px; text-align: center; background: var(--white); border: 2px solid var(--ink) }
+.person img { width: 150px; height: 186px; margin: 10px 0 22px; object-fit: cover; border-radius: 50%; outline: 4px solid var(--gold); outline-offset: 6px; background: var(--papyrus-2) }
+/* A gold bar above the role */
+.person-role::before { content: ""; display: block; width: 120px; height: 6px; margin: 0 auto 22px; background: var(--gold) }
+.person-role { font-size: 13px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--lapis) }
+.person h4 { font-family: var(--display); font-weight: 800; font-size: clamp(26px, 2.6vw, 34px); line-height: 1; letter-spacing: .02em; text-transform: uppercase; color: var(--ink) }
+.person p { max-width: 34ch; margin-top: 8px; font-size: 15px; line-height: 1.65; color: var(--ink-2) }
+
+/* ---------- What we're building page ---------- */
+.wb-hero { background: linear-gradient(180deg, var(--cream), var(--papyrus)); border-bottom: 2px solid var(--ink) }
+.wb-hero .wrap { display: flex; flex-direction: column; gap: 22px; padding-block: 72px 88px }
+.back-link { align-self: flex-start; font-weight: 600; font-size: 14px; text-decoration: none }
+.back-link:hover { text-decoration: underline; text-underline-offset: 3px }
+.wb-hero h1 { font-family: var(--display); font-weight: 800; font-size: clamp(48px, 8vw, 96px); line-height: .9; text-transform: uppercase; color: var(--ink); text-wrap: balance }
+.wb-hero-lead { max-width: 46ch; font-size: clamp(19px, 2.2vw, 23px); font-weight: 600; line-height: 1.35; color: var(--lapis) }
+.wb-hero-intro { max-width: 60ch; font-size: 18px; line-height: 1.6; color: var(--ink-2) }
+
+/* PWS Spaces + Freewallet = the backpack */
+.equation { display: grid; grid-template-columns: 1fr; gap: 14px; align-items: center; justify-items: center; margin-top: 26px }
+@media (min-width: 900px) { .equation { grid-template-columns: 1fr auto 1fr auto 1fr; gap: 18px } }
+.eq-term { width: 100%; max-width: 300px; display: flex; flex-direction: column; gap: 10px }
+.eq-art { display: grid; place-items: center; aspect-ratio: 4 / 3; padding: 16px; border: 2px solid var(--ink); border-radius: 16px; box-shadow: 6px 6px 0 var(--ink); animation: float 6s ease-in-out infinite }
+.eq-term:nth-child(3) .eq-art { animation-duration: 6.6s; animation-delay: .4s }
+.eq-term:nth-child(5) .eq-art { animation-duration: 7.2s; animation-delay: .8s }
+@keyframes float { 0%, 100% { translate: 0 0 } 50% { translate: 0 -8px } }
+.eq-name { text-align: center; font-family: var(--display); font-weight: 800; font-size: 24px; text-transform: uppercase; color: var(--ink) }
+.eq-op { font-family: var(--display); font-weight: 800; font-size: 56px; line-height: 1; color: var(--ink) }
+
+/* Section heads */
+.wb-head { max-width: 1000px; display: grid; gap: 14px }
+.wb-head h2 { font-family: var(--display); font-weight: 800; font-size: clamp(36px, 5.4vw, 60px); line-height: .95; text-transform: uppercase; color: var(--ink) }
+.wb-head-lead { max-width: 52ch; margin-top: 6px; font-size: 21px; font-weight: 600; line-height: 1.4; color: var(--ink) }
+.wb-head-desc { max-width: 64ch; font-size: 17px; line-height: 1.6; color: var(--ink-2) }
+
+/* Feature rows: copy on one side, an illustration on the other */
+.feature { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: center; margin-top: 64px }
+@media (min-width: 900px) {
+  .feature { grid-template-columns: 1fr 1.1fr; gap: 64px }
+  .feature.flip .feature-copy { order: 2 }
+}
+.feature-copy { min-width: 0; display: flex; flex-direction: column; gap: 12px }
+.feature-num { font-family: var(--display); font-weight: 800; font-size: 20px; color: var(--gold); -webkit-text-stroke: 1px var(--ink) }
+.feature-copy h3 { font-family: var(--display); font-weight: 800; font-size: clamp(28px, 3.4vw, 40px); line-height: .95; text-transform: uppercase; color: var(--ink) }
+.feature-copy p { max-width: 48ch; font-size: 17px; line-height: 1.6; color: var(--ink-2) }
+.stage { position: relative; min-width: 0; padding: 26px; border: 2px solid var(--ink); border-radius: 20px; box-shadow: 8px 8px 0 var(--ink) }
+
+/* Diagrams: the bag on top, dashed lines flowing down to what it holds or where it goes */
+.diagram { display: flex; flex-direction: column; align-items: center }
+.diagram-bag { width: 150px; height: 150px; filter: drop-shadow(4px 4px 0 rgba(20, 22, 43, .35)) }
+.diagram-lines { width: 100%; height: 70px; overflow: visible }
+.diagram-lines path { fill: none; stroke: var(--papyrus); stroke-width: 2.5; stroke-dasharray: 7 8; stroke-linecap: round; vector-effect: non-scaling-stroke; animation: flow 1.6s linear infinite }
+@keyframes flow { to { stroke-dashoffset: -30 } }
+.contents { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+.contents span { display: flex; align-items: center; gap: 8px; min-height: 58px; padding: 10px 12px; font-weight: 700; font-size: 14px; line-height: 1.3; color: var(--ink); background: var(--papyrus); border: 2px solid var(--ink); border-radius: 12px; box-shadow: 3px 3px 0 var(--ink) }
+.contents span::before { content: ""; flex: 0 0 auto; width: 9px; height: 9px; background: var(--gold); transform: rotate(45deg) }
+.places { width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px }
+.place { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 8px 12px; background: var(--cream); border: 2px solid var(--ink); border-radius: 14px; box-shadow: 4px 4px 0 var(--ink) }
+.place svg { width: 56px; height: 56px }
+.place span { text-align: center; font-family: var(--display); font-weight: 800; font-size: 16px; line-height: 1.05; letter-spacing: .02em; text-transform: uppercase; color: var(--ink) }
+@media (max-width: 480px) {
+  .places { gap: 8px }
+  .place svg { width: 44px; height: 44px }
+  .place span, .contents span { font-size: 13px }
+}
+.export-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; margin-top: 18px }
+.wb-toast { padding: 6px 12px; font-weight: 700; font-size: 13px; color: var(--papyrus); background: var(--ink); border: 2px solid var(--gold); border-radius: 999px; opacity: 0; transform: translateY(6px); transition: opacity .25s, transform .25s }
+.wb-toast.show { opacity: 1; transform: none }
+
+/* Who can reach in: working switches */
+.access-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px }
+.access-head b { font-family: var(--display); font-weight: 800; font-size: 24px; text-transform: uppercase; color: var(--ink) }
+.access-head span { padding: 3px 10px; font-weight: 700; font-size: 12px; color: var(--ink); background: var(--gold); border: 2px solid var(--ink); border-radius: 999px }
+.access-row { display: flex; align-items: center; gap: 12px; margin-top: 10px; padding: 12px 14px; background: var(--papyrus); border: 2px solid var(--ink); border-radius: 14px }
+.access-row div { flex: 1; min-width: 0; display: flex; flex-direction: column }
+.access-row b { font-size: 15px; color: var(--ink) }
+.access-row small { font-size: 13px; color: var(--ink-3) }
+.access-row.off small { color: #A3412A }
+.switch { position: relative; flex: 0 0 auto; width: 52px; height: 30px; padding: 0; background: var(--line); border: 2px solid var(--ink); border-radius: 999px; cursor: pointer; transition: background-color .25s }
+.switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; background: var(--white); border: 2px solid var(--ink); border-radius: 50%; transition: left .25s cubic-bezier(.2, .9, .3, 1.3) }
+.switch[aria-checked="true"] { background: var(--faience) }
+.switch[aria-checked="true"]::after { left: 25px }
+.switch:focus-visible { outline-offset: 3px }
+.access-note { margin-top: 14px; font-size: 13.5px; color: var(--ink-3) }
+
+/* A tool's three features, each with a small illustration */
+.cards3 { display: grid; grid-template-columns: 1fr; gap: 22px; margin-top: 52px }
+@media (min-width: 900px) { .cards3 { grid-template-columns: repeat(3, 1fr) } }
+.wb-card { min-width: 0; display: flex; flex-direction: column; overflow: hidden; background: var(--white); border: 2px solid var(--ink); border-radius: 18px }
+.wb-card-art { display: grid; place-items: center; min-height: 200px; padding: 16px; background-size: 36px 36px; border-bottom: 2px solid var(--ink) }
+.wb-card-art > img { aspect-ratio: 4 / 3; height: auto }
+.wb-card-body { flex: 1; display: flex; flex-direction: column; gap: 8px; padding: 22px }
+.wb-card h4 { font-family: var(--display); font-weight: 800; font-size: 22px; line-height: 1.05; text-transform: uppercase; color: var(--ink) }
+.wb-card p { font-size: 15px; line-height: 1.55; color: var(--ink-2) }
+
+/* Spaces and Collections: a small permissions tree */
+.tree { width: 100%; max-width: 280px; display: flex; flex-direction: column; gap: 8px }
+.node { display: flex; justify-content: space-between; gap: 8px; padding: 8px 10px; font-weight: 700; font-size: 13px; color: var(--ink); background: var(--papyrus); border: 2px solid var(--ink); border-radius: 10px; box-shadow: 3px 3px 0 var(--ink) }
+.node.child { position: relative; margin-left: 22px }
+.node.child::before { content: ""; position: absolute; left: -16px; top: -10px; width: 12px; height: 28px; border-left: 2px dashed var(--papyrus); border-bottom: 2px dashed var(--papyrus); border-bottom-left-radius: 6px }
+.perm { padding: 2px 8px; font-size: 11px; white-space: nowrap; background: var(--gold); border: 1.5px solid var(--ink); border-radius: 999px }
+.perm.only { background: var(--white) }
+
+/* Small white cards inside the illustrations: the encrypted note, the access grant */
+.mini-stack { width: 100%; max-width: 280px; display: flex; flex-direction: column; gap: 10px }
+.mini-card { display: flex; flex-direction: column; gap: 4px; padding: 12px; background: var(--white); border: 2px solid var(--ink); border-radius: 12px; box-shadow: 3px 3px 0 var(--ink); transition: opacity .25s }
+.mini-card small { font-size: 12.5px; color: var(--ink-3) }
+.note { min-height: 76px }
+.note small { font-weight: 700; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--lapis) }
+.note-text { font-size: 14px; line-height: 1.4; color: var(--ink); word-break: break-all }
+.note.server .note-text { font-family: var(--mono); font-size: 12.5px; color: var(--ink-2) }
+.grant b { font-size: 14px; color: var(--ink) }
+.grant.revoked { opacity: .55 }
+.grant.revoked small { color: #A3412A }
+
+/* Wallet syncing to a space */
+.sync { width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px }
+.sync-tile { width: 110px; aspect-ratio: 4 / 3; display: grid; place-items: center; padding: 8px; background: var(--papyrus); border: 2px solid var(--ink); border-radius: 12px; box-shadow: 3px 3px 0 var(--ink) }
+.sync-arrow { width: 60px; height: 24px }
+.sync-arrow path { fill: none; stroke: var(--papyrus); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round }
+.sync-arrow .shaft { stroke-dasharray: 5 6; animation: flow 1.2s linear infinite }
+
+.wb-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px }
+.wb-tags span { padding: 6px 12px; font-weight: 700; font-size: 13px; color: var(--ink); background: var(--papyrus); border: 2px solid var(--ink); border-radius: 999px }
+.wb-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px }
+
+/* Open standards band */
+.standards { color: var(--papyrus); background: var(--ink); border-bottom: 2px solid var(--ink) }
+.standards .wrap { display: grid; grid-template-columns: 1fr; gap: 32px; padding-block: 96px }
+@media (min-width: 900px) { .standards .wrap { grid-template-columns: 1fr 1fr; align-items: center; gap: 56px } }
+.standards h2 { font-family: var(--display); font-weight: 800; font-size: clamp(36px, 5.4vw, 60px); line-height: .95; text-transform: uppercase }
+.standards p { max-width: 52ch; margin-top: 16px; font-size: 17px; line-height: 1.6; color: #D6D2DF }
+.standards-chips { display: flex; flex-wrap: wrap; gap: 10px }
+.standards-chips span { padding: 10px 14px; font-family: var(--display); font-weight: 800; font-size: 20px; letter-spacing: .02em; text-transform: uppercase; color: var(--ink); background: var(--gold); border: 2px solid var(--papyrus); border-radius: 12px; transition: transform .25s var(--ease) }
+.standards-chips span:hover { transform: rotate(-2deg) translateY(-2px) }
+
+.next { background: var(--cream); border-bottom: 2px solid var(--ink) }
+.next .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-block: 80px }
+.next h2 { font-family: var(--display); font-weight: 800; font-size: clamp(30px, 4.4vw, 48px); line-height: .95; text-transform: uppercase; color: var(--ink) }
+.next-links { display: flex; flex-wrap: wrap; gap: 12px }
+
+/* ---------- Footer ---------- */
+.foot { color: var(--papyrus); background: var(--ink) }
+.foot .wrap { display: flex; flex-direction: column; align-items: center; gap: 18px; padding-block: 64px }
+.news { width: 100%; max-width: 680px; display: flex; flex-direction: column; gap: 12px }
+.news h2 { font-family: var(--display); font-weight: 800; font-size: clamp(34px, 5vw, 56px); line-height: .95; text-transform: uppercase }
+.news-sub { margin-bottom: 8px; font-size: 17px; color: #C9C6D6 }
+.news label { display: block; margin-bottom: 10px; font-size: 15px; color: #C9C6D6 }
+.news-row { display: flex; flex-wrap: wrap }
+/* The input takes the spare width; if the button has to wrap, it fills the row instead */
+.news-row input { flex: 999 1 240px; min-width: 0; min-height: 58px; padding: 0 20px; font-family: var(--body); font-size: 17px; color: var(--papyrus); background: transparent; border: 1.5px solid var(--papyrus); border-radius: 0 }
+.news-row input::placeholder { color: #8E8CA0 }
+.news-row input:focus-visible { outline-offset: 0 }
+.news-row button { flex: 1 0 auto; min-height: 58px; padding: 0 34px; font-family: var(--body); font-weight: 700; font-size: 17px; color: var(--ink); background: var(--gold); border: 0; border-radius: 0; cursor: pointer; transition: transform .18s var(--ease) }
+.news-row button:hover { transform: translateY(-2px) }
+.news-row button:active { transform: scale(.97) }
+.news-thanks { min-height: 1.4em; font-size: 14px; color: #C9C6D6 }
+.wordmark { display: flex; align-items: center; gap: 16px; margin-top: 18px; font-family: var(--display); font-weight: 800; font-size: clamp(54px, 10vw, 110px); line-height: .9; text-transform: uppercase }
+.wordmark img { width: auto; height: .8em }
+
+/* ---------- Motion ---------- */
+/* Scroll reveals: site.js sets data-reveal to "in" as each element scrolls into view, then "done" once it has
+   faded in. Without JavaScript, or with reduced motion, everything just shows. */
+.anim-on [data-reveal=""] { opacity: 0; transform: translateY(24px) }
+.anim-on [data-reveal="in"] { transition: opacity .6s cubic-bezier(.2, .7, .2, 1), transform .6s cubic-bezier(.2, .7, .2, 1) }
+.anim-on [data-reveal="in"]:nth-child(2) { transition-delay: .07s }
+.anim-on [data-reveal="in"]:nth-child(3) { transition-delay: .14s }
+.anim-on [data-reveal="in"]:nth-child(4) { transition-delay: .21s }
+.anim-on [data-reveal="in"]:nth-child(5) { transition-delay: .28s }
+.anim-on [data-reveal="in"]:nth-child(6) { transition-delay: .35s }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important }
+  html { scroll-behavior: auto }
+  .btn:hover, .btn:active, .lift:hover, .product:hover, .product:hover .product-art img,
+  .principles li:hover img, .card:hover .star, .standards-chips span:hover, .news-row button:hover { transform: none }
+}

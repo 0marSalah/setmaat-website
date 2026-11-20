@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260">
+  <!-- PWS Spaces: a storage block linked to two portable copies -->
+  <path d="M180 30 L320 100 L180 170 L40 100 Z" fill="#F4EEE2" stroke="#14162B" stroke-width="3"/>
+  <path d="M40 100 L40 150 L180 220 L180 170 Z" fill="#D9A521" stroke="#14162B" stroke-width="3"/>
+  <path d="M320 100 L320 150 L180 220 L180 170 Z" fill="#23408E" stroke="#14162B" stroke-width="3"/>
+  <path d="M110 100 L180 65 L250 100 L180 135 Z" fill="#14162B"/>
+  <path d="M150 100 L180 85 L210 100 L180 115 Z" fill="#D9A521"/>
+  <g stroke="#F4EEE2" stroke-width="3" stroke-dasharray="4 8" stroke-linecap="round" fill="none"><path d="M40 140 C 0 150, 0 210, 40 230"/><path d="M320 140 C 360 150, 360 210, 320 230"/></g>
+  <rect x="18" y="222" width="44" height="28" fill="#F4EEE2" stroke="#14162B" stroke-width="3"/>
+  <rect x="298" y="222" width="44" height="28" fill="#F4EEE2" stroke="#14162B" stroke-width="3"/>
+</svg>

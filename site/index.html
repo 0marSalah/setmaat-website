@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SetMaat | The Agentic Digital Backpack Platform Cooperative</title>
+  <meta name="description" content="SetMaat is a non-profit cooperative building the Agentic Digital Backpack: one open, encrypted store for the notes, memories and records your AI works from, where you decide which apps and agents get access. Built on PWS Spaces and Freewallet.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/logo.svg" alt="">SetMaat</a>
+    <nav aria-label="Main">
+      <a href="#why" data-section="why">Why SetMaat</a>
+      <a href="#principles" data-section="principles">Our principles</a>
+      <a href="#work" data-section="work">What we're building</a>
+      <a href="#people" data-section="people">Co-op</a>
+    </nav>
+    <a class="btn btn-dark" href="#work">View Our Solution</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>The agentic digital <span class="hl">backpack</span> platform.</h1>
+        <p class="hero-sub">Everything your AI needs to know about you, carried by you. Notes, memories, records and archives in one open, encrypted store, where you decide which apps and agents can reach in. Built for small, local, fit-for-purpose AI by SetMaat, a non-profit cooperative from Cairo.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#work">See our work</a>
+          <a class="btn btn-ghost" href="#name">Why &ldquo;SetMaat&rdquo;?</a>
+        </div>
+      </div>
+
+      <!-- Wallet demo. site.js loops it through data-step 0 to 4; without JavaScript it shows step 1. -->
+      <div class="phone" aria-hidden="true">
+        <div class="device">
+          <div class="notch"></div>
+          <div class="clock">9:41</div>
+          <div class="screen" data-wallet-demo data-step="1">
+            <div class="sc sc-lock">
+              <div class="sc-top"><span class="sc-app">Freewallet</span><span class="pill locked">Locked</span></div>
+              <div class="lock-ring tone-lapis starry">
+                <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2" fill="#D9A521" stroke="#14162B" stroke-width="1.8"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="#14162B" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="16" r="1.6" fill="#14162B"/></svg>
+              </div>
+              <div class="sc-title lock-title">Welcome back</div>
+              <p class="lock-text">Your keys stay on this device. There is no login server holding your account.</p>
+              <span class="sc-cta" data-tap="unlock">Unlock with passkey</span>
+            </div>
+            <div class="sc sc-home">
+              <div class="sc-top"><span class="sc-app">Freewallet</span><span class="pill">Unlocked</span></div>
+              <div class="sc-title">Your keys</div>
+              <div class="sc-card tone-lapis starry"><img class="art" src="img/wallet.svg" alt=""></div>
+              <div class="sc-row"><div><b>Co-op membership</b><small>Verifiable credential</small></div><span class="ok">Verified</span></div>
+              <div class="sc-row"><div><b>Signing key</b><small>Only on this device</small></div><span class="ok">Yours</span></div>
+            </div>
+            <div class="sc sc-access">
+              <div class="sc-top"><span class="sc-app">Freewallet</span><span class="pill">Unlocked</span></div>
+              <div class="sc-title">Who can reach in</div>
+              <div class="sc-row"><div><b>Notes assistant</b><small>Read &middot; Notes</small></div><span class="tog on revocable" data-tap="toggle"></span></div>
+              <div class="sc-row"><div><b>Photo backup</b><small>Write &middot; Archives</small></div><span class="tog on"></span></div>
+              <div class="sc-row"><div><b>Calendar agent</b><small>No access</small></div><span class="tog"></span></div>
+            </div>
+            <div class="scrim"></div>
+            <div class="sheet">
+              <div class="grab"></div>
+              <div class="sheet-title"><b>Notes assistant</b> wants to read your Notes</div>
+              <div class="sheet-scope">Scoped to Notes &middot; you can take it back at any time</div>
+              <div class="sheet-btns"><span class="sheet-btn ghost">Deny</span><span class="sheet-btn" data-tap="allow">Allow</span></div>
+            </div>
+            <div class="toast">Access granted to Notes assistant</div>
+            <span class="tap"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Set + Maat -->
+  <section class="sec cream" id="name">
+    <div class="wrap name-grid">
+      <div class="name-copy" data-reveal>
+        <h2 class="sec-title">Set + Maat</h2>
+        <p>In ancient Egypt, Maat stood for truth, fairness and order, drawn as a single feather. SetMaat means &ldquo;setting Maat in place&rdquo;. Today the scale tips toward the platforms that hold our data. We build tools that set it right.</p>
+      </div>
+      <svg class="scale" viewBox="0 0 460 370" role="img" aria-label="A balance scale tipped toward a pile of platform blocks. The feather of Maat drops onto the other pan and the scale settles level.">
+        <rect x="221" y="110" width="18" height="206" fill="#D9A521"/>
+        <rect x="176" y="314" width="108" height="20" fill="#D9A521"/>
+        <rect x="154" y="334" width="152" height="14" fill="#14162B"/>
+        <circle cx="230" cy="100" r="15" fill="#14162B"/>
+        <g class="beam">
+          <rect x="70" y="104" width="320" height="12" rx="2" fill="#14162B"/>
+          <circle cx="80" cy="110" r="8" fill="#D9A521"/>
+          <circle cx="380" cy="110" r="8" fill="#D9A521"/>
+          <g class="pan-l">
+            <path d="M80 110 L40 216 M80 110 L120 216" stroke="#14162B" stroke-width="2"/>
+            <path d="M28 216 H132 Q128 246 80 246 Q32 246 28 216 Z" fill="#D9A521"/>
+            <!-- the platforms: a pile of grey blocks -->
+            <rect x="38" y="190" width="40" height="26" rx="6" fill="#A8A397"/>
+            <rect x="82" y="190" width="40" height="26" rx="6" fill="#8F8A7F"/>
+            <rect x="50" y="162" width="40" height="26" rx="6" fill="#B9B4A8"/>
+            <rect x="70" y="134" width="40" height="26" rx="6" fill="#9E998D"/>
+            <rect x="94" y="162" width="28" height="26" rx="6" fill="#C7C2B7"/>
+            <g fill="#F4EEE2" opacity=".7"><rect x="44" y="197" width="22" height="3" rx="1.5"/><rect x="88" y="197" width="22" height="3" rx="1.5"/><rect x="56" y="169" width="22" height="3" rx="1.5"/><rect x="76" y="141" width="22" height="3" rx="1.5"/></g>
+          </g>
+          <g class="pan-r">
+            <path d="M380 110 L340 216 M380 110 L420 216" stroke="#14162B" stroke-width="2"/>
+            <path d="M328 216 H432 Q428 246 380 246 Q332 246 328 216 Z" fill="#D9A521"/>
+            <!-- the feather of Maat -->
+            <g class="feather">
+              <path d="M380 120 C 406 140, 408 182, 383 214 C 362 190, 360 150, 380 120 Z" fill="#D9A521" stroke="#14162B" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M380 128 L383 218" stroke="#14162B" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M381 146 L395 140 M381 161 L398 155 M382 176 L397 171 M382 191 L393 188 M381 153 L367 148 M381 168 L365 163 M382 183 L368 180" stroke="#14162B" stroke-width="1.6" stroke-linecap="round"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Why we exist -->
+  <section class="sec papyrus why" id="why">
+    <div class="wrap">
+      <h2 class="sec-title" data-reveal>Why we exist</h2>
+      <p class="statement" data-reveal>Every team building small, local AI ends up rebuilding the same thing: somewhere safe to keep a person's context, and a way to decide who can read it. <mark>We build that backpack once, in the open</mark>, so people can see what's in it and how it's used, choose who and what gets access, and carry it between tools instead of being locked into one.</p>
+    </div>
+  </section>
+
+  <!-- Principles -->
+  <section class="principles" id="principles" aria-label="Our principles">
+    <ul>
+      <li><img src="img/star.svg" alt="">You hold the keys</li>
+      <li><img src="img/star.svg" alt="">Open standards</li>
+      <li><img src="img/star.svg" alt="">Open source, always</li>
+      <li><img src="img/star.svg" alt="">No lock-in</li>
+      <li><img src="img/star.svg" alt="">Non-profit</li>
+    </ul>
+  </section>
+
+  <!-- What we do -->
+  <section class="sec papyrus" id="programs">
+    <div class="wrap">
+      <h2 class="sec-title" data-reveal>What we do</h2>
+      <p class="sec-intro" data-reveal>Three programs, chosen and funded by members. Everything we make is released openly, for anyone to run, adapt, fork and build on.</p>
+      <div class="card-grid">
+        <article class="card lift" data-reveal>
+          <div class="program-n">01</div>
+          <h3>The Agentic Digital Backpack Platform</h3>
+          <p>The storage servers, wallets and libraries behind the backpack. They give a small AI project encrypted storage and fine-grained authorization without building them from scratch. Fully open source, self-hostable, free to use, study and build on.</p>
+        </article>
+        <article class="card lift" data-reveal>
+          <div class="program-n">02</div>
+          <h3>Interop through open standards</h3>
+          <p>We take part in the standards these tools rest on, like Portable Web Spaces at the W3C Credentials Community Group, so projects from different teams can read and write the same data instead of each inventing a format.</p>
+        </article>
+        <article class="card lift" data-reveal>
+          <div class="program-n">03</div>
+          <h3>Learning circles</h3>
+          <p>Study groups, online and in person, where members and teams adopting these tools work through storage, keys and authorization together, from first key pair to production.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we're building -->
+  <section class="sec cream" id="work">
+    <div class="wrap">
+      <h2 class="sec-title" data-reveal>What we're building</h2>
+      <p class="sec-intro" data-reveal>One product for AI that is sized to the people it serves, made of two open tools you can also use on their own.</p>
+      <a class="btn btn-ghost more-link" href="what-were-building/">Learn more &rarr;</a>
+
+      <div class="pack">
+        <img class="pack-bag" src="img/backpack.svg" alt="">
+        <svg class="pack-lines" viewBox="0 0 1000 110" preserveAspectRatio="none" aria-hidden="true"><path d="M500 0 C500 62 167 46 167 110"/><path d="M500 0 V110"/><path d="M500 0 C500 62 833 46 833 110"/></svg>
+        <svg class="pack-line" viewBox="0 0 4 64" aria-hidden="true"><path d="M2 0 V64"/></svg>
+        <div class="pack-items">
+          <div class="pack-item" data-reveal>
+            <div class="pack-tile tone-faience starry"><img class="art" src="img/spaces.svg" alt=""></div>
+            <div class="kicker">The storage</div>
+            <div class="pack-name">PWS Spaces</div>
+            <p class="pack-desc">Portable Web Spaces: where the contents of the backpack are kept.</p>
+          </div>
+          <div class="pack-item" data-reveal>
+            <div class="pack-tile tone-lapis starry"><img class="art" src="img/wallet.svg" alt=""></div>
+            <div class="kicker">The keys</div>
+            <div class="pack-name">Freewallet</div>
+            <p class="pack-desc">A free, open-source wallet for the keys and permissions that open the backpack.</p>
+          </div>
+          <div class="pack-item" data-reveal>
+            <div class="pack-tile tone-clay starry"><img class="art" src="img/data.svg" alt=""></div>
+            <div class="kicker">What goes in</div>
+            <div class="pack-name">Notes, memories, records</div>
+            <p class="pack-desc">Assistant context and memory, notes and markdown files, sensitive records, a backup of the family photo archive.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="products">
+        <article class="product" data-reveal>
+          <div class="product-art tone-faience starry"><img class="art" src="img/spaces.svg" alt=""></div>
+          <div class="product-head"><div class="kicker">The storage</div><h3>PWS Spaces</h3></div>
+          <div class="product-body">
+            <p class="product-lead">Portable Web Spaces: where the contents of the backpack are kept.</p>
+            <p class="product-desc">PWS is storage built on the Portable Web Spaces specification from the W3C Credentials Community Group. Each space belongs to its owner, and every app, model or agent only gets the access it was granted.</p>
+            <ul>
+              <li>Organise data into Spaces and Collections, each with its own permissions</li>
+              <li>Encrypt collections so the server storing them can't read them</li>
+              <li>Export a space and import it elsewhere, or sync it across servers you choose</li>
+            </ul>
+            <div class="tags"><span>Open source</span><span>Open standard</span><span>W3C CCG</span><span>Capability-based access</span><span>Self-hostable</span></div>
+            <div class="product-links">
+              <a class="btn btn-faience" href="https://w3c-ccg.github.io/portable-web-spaces-spec/">Read the spec</a>
+              <a class="btn btn-ghost" href="https://github.com/interop-alliance/web-spaces-server">View the server code</a>
+            </div>
+          </div>
+        </article>
+        <article class="product" data-reveal>
+          <div class="product-art tone-lapis starry"><img class="art" src="img/wallet.svg" alt=""></div>
+          <div class="product-head"><div class="kicker">The keys</div><h3>Freewallet</h3></div>
+          <div class="product-body">
+            <p class="product-lead">A free, open-source wallet for the keys and permissions that open the backpack.</p>
+            <p class="product-desc">Freewallet runs in your browser and keeps your keys on your side. There is no login server holding your account: you unlock it with a passkey or a passphrase, and from there you hand out exactly the access each app or AI agent needs.</p>
+            <ul>
+              <li>Hold your DIDs, verifiable credentials and keys yourself, not on a platform</li>
+              <li>Give an app or AI agent scoped, revocable access instead of handing over everything</li>
+              <li>Syncs your wallet to PWS Spaces you choose</li>
+            </ul>
+            <div class="tags"><span>Open source</span><span>DIDs</span><span>Verifiable credentials</span><span>Passkeys</span><span>Capabilities (ZCAP)</span></div>
+            <div class="product-links">
+              <a class="btn btn-primary" href="https://freewallet.me">Visit freewallet.me</a>
+              <a class="btn btn-ghost" href="https://github.com/interop-alliance/freewallet">View the code</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agentic Digital Backpack Platform -->
+  <section class="sec papyrus" id="backpack">
+    <div class="wrap">
+      <h2 class="sec-title" data-reveal>Agentic Digital Backpack Platform</h2>
+      <p class="backpack-lead" data-reveal>One place for the data your agents work from, owned by you.</p>
+      <p class="sec-intro" data-reveal>The backpack is what you get when storage you control meets keys you hold. It is made of two open-source tools that work today, and it runs wherever you choose to keep it.</p>
+      <div class="card-grid">
+        <article class="card lift" data-reveal>
+          <img class="star" src="img/star-gold.svg" alt="">
+          <h3>What goes in</h3>
+          <p>Assistant context and memory, notes and markdown files, sensitive records, a backup of the family photo archive.</p>
+        </article>
+        <article class="card lift" data-reveal>
+          <img class="star" src="img/star-gold.svg" alt="">
+          <h3>Who can reach in</h3>
+          <p>Each app, model or agent gets only the access you grant it, scoped to what it needs, and you can take it back at any time.</p>
+        </article>
+        <article class="card lift" data-reveal>
+          <img class="star" src="img/star-gold.svg" alt="">
+          <h3>Take it anywhere</h3>
+          <p>Export it, import it elsewhere, sync it across servers you choose, or host it yourself at home or on-prem.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Adopters -->
+  <section class="sec cream" id="adopters">
+    <div class="wrap">
+      <h2 class="sec-title" data-reveal>Who is using our tech</h2>
+      <p class="sec-intro" data-reveal>Organizations and projects building on the backpack's components today.</p>
+      <ul class="adopters">
+        <li class="adopter lift" data-reveal>
+          <h3>Interop Alliance</h3>
+          <p>Designs and builds systems on open standards, decentralized identity and bring-your-own-everything architectures.</p>
+          <div class="adopter-sites"><a href="https://interopalliance.org">interopalliance.org</a></div>
+        </li>
+        <li class="adopter lift" data-reveal>
+          <h3>Digital Credentials Commons</h3>
+          <p>A community of institutions, organizations, vendors and learners advancing privacy-first, portable, verifiable digital credentials.</p>
+          <div class="adopter-sites"><a href="https://dccommons.org/">dccommons.org</a></div>
+        </li>
+        <li class="adopter lift" data-reveal>
+          <h3>Companion Intelligence</h3>
+          <p>A local-first AI system for private digital memory, with records kept on hardware you own so your agents can draw on them.</p>
+          <div class="adopter-sites"><a href="https://ci.computer/memory">ci.computer/memory</a></div>
+        </li>
+        <li class="adopter lift" data-reveal>
+          <h3>Club.Pub and Local.Pub</h3>
+          <p>Meet people, not platforms.</p>
+          <div class="adopter-sites"><a href="https://club.pub/">club.pub</a><a href="https://local.pub/">local.pub</a></div>
+        </li>
+        <li class="adopter lift" data-reveal>
+          <h3>Praxamark</h3>
+          <p>A personal and organizational knowledge hub: capture what you read, watch and listen to, mark and cite it, and keep it in a vault on your own computer.</p>
+          <div class="adopter-sites"><a href="https://praxamark.com/">praxamark.com</a></div>
+        </li>
+        <li class="adopter lift" data-reveal>
+          <h3>Civic.Social</h3>
+          <div class="adopter-sites"><a href="https://civic.social">civic.social</a></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- People. To add someone: copy an <article class="person"> block and put their photo in members/. -->
+  <section class="sec white people" id="people">
+    <div class="wrap">
+      <h2 class="sec-title" data-reveal>Who's behind SetMaat</h2>
+      <p class="sec-intro" data-reveal>Three founding members run the co-op, guided by advisors who share their experience.</p>
+
+      <h3 class="group-label">Founding members</h3>
+      <div class="people-grid">
+        <article class="person lift" data-reveal>
+          <img src="members/dmitri-zagidulin.jpg" alt="Photo of Dmitri Zagidulin">
+          <div class="person-role">Senior Engineer</div>
+          <h4>Dmitri Zagidulin</h4>
+          <p>Distributed systems engineer and authentication and credentials expert; Technical Architect for the DCC, contributing to core decentralization libraries, open standards, and conference organization.</p>
+        </article>
+        <article class="person lift" data-reveal>
+          <img src="members/omar-salah.jpg" alt="Photo of Omar Salah">
+          <div class="person-role">Software Engineer</div>
+          <h4>Omar Salah</h4>
+          <p>Full-stack engineer specializing in web applications and backend systems; contributing to open-source projects in decentralized identity, digital wallets, verifiable credentials, and distributed storage.</p>
+        </article>
+        <article class="person lift" data-reveal>
+          <img src="members/kholoud-fattem.jpg" alt="Photo of Kholoud Fattem">
+          <div class="person-role">Software Engineer</div>
+          <h4>Kholoud Fattem</h4>
+          <p>Software Engineer with experience in technical leadership and startup management. Combines strong engineering fundamentals with a broader understanding of system architecture and product strategy.</p>
+        </article>
+      </div>
+
+      <h3 class="group-label">Advisors</h3>
+      <div class="people-grid">
+        <article class="person lift" data-reveal>
+          <img src="members/juan-caballero.jpg" alt="Photo of Juan Caballero">
+          <div class="person-role">Community Builder</div>
+          <h4>Juan &ldquo;Bumblefudge&rdquo; Caballero</h4>
+          <p>Developer-community builder working across standards, ecosystem-building, non-extractive sustainability models and community governance; focused on open-sourcing and decentralizing digital identity and community data governance.</p>
+        </article>
+        <article class="person lift" data-reveal>
+          <img src="members/janet-gonzales.jpg" alt="Photo of Janet Gonzales">
+          <div class="person-role">UX Designer</div>
+          <h4>Janet Gonzales</h4>
+          <p>Specializing in UX strategy for verifiable credentials and AI, Janet brings clarity to complex systems, designing user-first experiences that make hard technical problems feel intuitive.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="news">
+      <h2>Follow what we build</h2>
+      <p class="news-sub">Monthly letter: releases, standards news, learning circles.</p>
+      <form data-newsletter novalidate>
+        <label for="news-email">Email address</label>
+        <div class="news-row">
+          <input id="news-email" type="email" placeholder="you@example.com" autocomplete="email">
+          <button type="submit">Subscribe</button>
+        </div>
+      </form>
+      <p class="news-thanks" data-newsletter-thanks aria-live="polite"></p>
+    </div>
+    <div class="wordmark" aria-hidden="true"><img src="img/logo-on-dark.svg" alt="">SetMaat</div>
+  </div>
+</footer>
+
+</body>
+</html>

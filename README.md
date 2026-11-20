@@ -1,68 +1,68 @@
 # SetMaat website
 
-The SetMaat co-op website: a single page built with Vite, React and TypeScript.
+The SetMaat co-op website: two pages of plain HTML, one stylesheet and one small script. There is no build step, no framework and nothing to install. What's in `site/` is exactly what gets served.
 
-## Getting started
+- **Home** (`site/index.html`): the hero with the wallet demo, Set + Maat, why we exist, principles, programs, what we're building, adopters, and the people behind the co-op.
+- **What we're building** (`site/what-were-building/index.html`): the backpack, PWS Spaces and Freewallet in depth, with small interactive demos.
 
-This project uses [pnpm](https://pnpm.io).
+## Running it locally
+
+Serve the `site/` folder with any static file server, for example:
 
 ```sh
-pnpm install
-pnpm dev          # http://localhost:5173
+python3 -m http.server 8000 -d site    # then open http://localhost:8000
 ```
 
-| Script         | What it does                                     |
-| -------------- | ------------------------------------------------ |
-| `pnpm dev`     | Start the dev server with hot reload             |
-| `pnpm build`   | Type-check and build the static site to `dist/`  |
-| `pnpm preview` | Serve the built `dist/` folder locally           |
-| `pnpm lint`    | Lint with oxlint                                 |
+To preview it exactly as Cloudflare serves it (same URL handling), run `npx wrangler dev` from the repo root.
 
-The build output in `dist/` is plain static files.
-
-## Deploying (Cloudflare)
-
-Cloudflare is connected to this repo and deploys every push to `main`. It runs `pnpm run build`, then `npx wrangler deploy`, which uploads `dist/` using the settings in `wrangler.jsonc`. The `name` there must match the project name in the Cloudflare dashboard (`setmaat`). Other branches get preview builds.
-
-## Deploying (GitHub Pages)
-
-Every push to `main` builds the site and publishes it to https://setmaat.github.io/setmaat-website/ using `.github/workflows/deploy.yml`. You can also run it by hand from the repo's **Actions** tab.
-
-- **One-time setup:** in the repo, go to **Settings > Pages** and set **Source** to **GitHub Actions**.
-- **Base path:** GitHub Pages serves the site from `/setmaat-website/`. The workflow passes that path to the build in `BASE_PATH`, so links, assets and member photos all resolve. You don't need to change anything if the repo is renamed or you add a custom domain.
-- **Deploying without GitHub Actions:** if Actions can't run (for example, while the account has a billing hold), run `pnpm deploy:pages`. It builds the site and pushes the output to the `gh-pages` branch. For this to work, **Settings > Pages > Source** must be set to **Deploy from a branch** and the branch to `gh-pages` / `(root)`. Switch the source back to **GitHub Actions** to return to automatic deploys.
-- **Check a Pages-style build locally:** `BASE_PATH=/setmaat-website/ pnpm build && BASE_PATH=/setmaat-website/ pnpm preview`, then open http://localhost:4173/setmaat-website/
+You can also open `site/index.html` straight from disk. Everything shows, but links between the two pages need a server.
 
 ## Project layout
 
 ```
-index.html              Page shell: title, meta, favicon, Google Fonts
-public/favicon.svg      Logo used as the favicon
-public/members/         Member photos
-src/
-  main.tsx              Entry point
-  App.tsx               Page sections, in order
-  styles/global.css     Colour/font tokens, base styles, buttons, shared section layout
-  assets/               Background patterns (frieze, stars)
-  components/           One component per section, each with its own CSS file
-  data/                 The site's content (see below)
+site/                          Everything that gets published
+  index.html                   Home page
+  what-were-building/
+    index.html                 What we're building page
+  styles.css                   All styles for both pages: colours, fonts, layout, motion
+  site.js                      All behaviour: wallet demo, switches, scroll reveals, newsletter form
+  img/                         Illustrations and logos (SVG), shared by both pages
+  members/                     Member photos
+  favicon.svg, apple-touch-icon.png
+wrangler.jsonc                 Cloudflare settings
+.github/workflows/deploy.yml   GitHub Pages copy
 ```
+
+Paths inside the pages are relative (`img/wallet.svg` on the home page, `../img/wallet.svg` on the second page), so the site works at the root of setmaat.com and under `/setmaat-website/` on GitHub Pages without changes.
 
 ## Editing content
 
-Most copy lives in `src/data/`, so you can change it without touching the components:
+All text lives in the two HTML files. Each section starts with a comment naming it, like `<!-- Adopters -->`.
 
-- `members.json`: founders and advisors. Members can edit their own entry on GitHub. Send them the link to [`src/data/README.md`](src/data/README.md), which explains the fields and how to add a photo. `pnpm build` fails if an entry is missing a required field.
-- `projects.ts`: the "What we're building" section: the Agentic Digital Backpack lead panel and the two tools inside it (PWS Spaces, Freewallet).
-- `adopters.ts`: the "Who is using our tech" organizations and projects.
-- `programs.ts`: the three programs.
-- `principles.ts`: the gold principles strip.
+- **People:** in `site/index.html`, under `<!-- People -->`. To add someone, copy an `<article class="person">` block, change the role, name and bio, and put a square-ish photo (at least 400 × 400 px) in `site/members/`, named after them, e.g. `site/members/omar-salah.jpg`.
+- **Adopters:** in `site/index.html`, under `<!-- Adopters -->`. Copy an `<li class="adopter">` block. Leave out the `<p>` if there's no description yet.
+- **The two tools (PWS Spaces, Freewallet):** they appear on both pages. When their text changes, update both files.
+- **The header and footer** are repeated in both pages. When you change one, change the other.
+- **Colours and fonts** are set once, at the top of `site/styles.css`, as `--papyrus`, `--lapis`, `--gold` and so on.
+- **Fade-in on scroll:** add `data-reveal` to any element and it fades in as it scrolls into view. Without JavaScript, or for people who turn off motion, it just shows.
 
-The hero, "Why SetMaat", and footer text live in their own components under `src/components/`.
+## Deploying
+
+Both hosts publish on every push to `main`. Nothing needs to be built first.
+
+### Cloudflare (setmaat.com)
+
+Cloudflare Workers Builds is connected to this repo. On every push to `main` it runs `npx wrangler deploy`, which uploads `site/` using `wrangler.jsonc`. The `name` there must match the project name in the Cloudflare dashboard (`setmaat`). Other branches get preview builds.
+
+In the Cloudflare dashboard, under the Worker's **Settings > Build**, the **Build command** must be empty and the **Deploy command** must be `npx wrangler deploy`.
+
+### GitHub Pages (setmaat.github.io/setmaat-website)
+
+`.github/workflows/deploy.yml` publishes `site/` on every push to `main`. You can also run it by hand from the repo's **Actions** tab. For this to work, **Settings > Pages > Source** must be set to **GitHub Actions**.
 
 ## Still to fill in before launch
 
-- Profile links for members, in `src/data/members.json`
-- The newsletter form in `src/components/Footer.tsx`, which isn't connected to a provider yet
+- The newsletter form isn't connected to a provider yet. It shows a "sign-ups open soon" message instead. The handler is at the top of `site/site.js`.
+- Profile links for members (GitHub, LinkedIn and so on).
 
-Placeholder links were removed rather than left pointing to `#`. When there are real pages for them, add back: links on the program cards (`src/data/programs.ts`), "Try a Space" on PWS (`src/data/projects.ts`), the footer's co-op and community links (bylaws, annual report, GitHub, forum, contact email), and a way to join the co-op.
+Placeholder links were removed rather than left pointing to `#`. When there are real pages for them, add back: links on the program cards, "Try a Space" on PWS, the footer's co-op and community links (bylaws, annual report, GitHub, forum, contact email), and a way to join the co-op.

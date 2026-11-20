@@ -1,4 +1,4 @@
-# Builds the site and publishes it to GitHub Pages on every push to main.
+# Publishes the site/ folder to GitHub Pages on every push to main. There is no build step.
 # One-time setup: in the repo, go to Settings > Pages and set "Source" to "GitHub Actions".
 name: Deploy to GitHub Pages
 
@@ -18,39 +18,19 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-
-      # Installs the pnpm version named in package.json's "packageManager" field.
-      - uses: pnpm/action-setup@v6
-
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 24
-          cache: pnpm
-
-      - run: pnpm install --frozen-lockfile
-
-      # base_path is "/<repo-name>" for a project site, or "" on a custom domain.
-      - id: pages
-        uses: actions/configure-pages@v6
-
-      - run: pnpm build
-        env:
-          BASE_PATH: ${{ steps.pages.outputs.base_path }}/
-
-      - uses: actions/upload-pages-artifact@v5
-        with:
-          path: dist
-
   deploy:
-    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+
       - id: deployment
         uses: actions/deploy-pages@v5

@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What We're Building | SetMaat</title>
+  <meta name="description" content="The Agentic Digital Backpack Platform: PWS Spaces for storage you control, plus Freewallet for keys you hold. One place for the data your agents work from, owned by you.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../site.js" defer></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../img/logo.svg" alt="">SetMaat</a>
+    <nav aria-label="Main">
+      <a href="../#why">Why SetMaat</a>
+      <a href="../#principles">Our principles</a>
+      <a href="./" aria-current="page">What we're building</a>
+      <a href="../#people">Co-op</a>
+    </nav>
+    <a class="btn btn-dark" href="#backpack">View Our Solution</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero: PWS Spaces + Freewallet = the backpack -->
+  <section class="wb-hero">
+    <div class="wrap">
+      <a class="back-link" href="../#work">&larr; Back to home</a>
+      <h1>What we're building</h1>
+      <p class="wb-hero-lead">One place for the data your agents work from, owned by you.</p>
+      <p class="wb-hero-intro">One product for AI that is sized to the people it serves, made of two open tools you can also use on their own.</p>
+      <div class="equation" role="img" aria-label="PWS Spaces plus Freewallet equals the backpack">
+        <div class="eq-term">
+          <div class="eq-art tone-faience starry"><img class="art" src="../img/spaces.svg" alt=""></div>
+          <div class="eq-name">PWS Spaces</div>
+        </div>
+        <span class="eq-op">+</span>
+        <div class="eq-term">
+          <div class="eq-art tone-lapis starry"><img class="art" src="../img/wallet.svg" alt=""></div>
+          <div class="eq-name">Freewallet</div>
+        </div>
+        <span class="eq-op">=</span>
+        <div class="eq-term">
+          <div class="eq-art tone-gold starry"><img class="art" src="../img/backpack.svg" alt=""></div>
+          <div class="eq-name">The backpack</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The backpack -->
+  <section class="sec cream" id="backpack">
+    <div class="wrap">
+      <div class="wb-head" data-reveal>
+        <p class="kicker">The backpack</p>
+        <h2>Agentic Digital Backpack Platform</h2>
+        <p class="wb-head-desc">The backpack is what you get when storage you control meets keys you hold. It is made of two open-source tools that work today, and it runs wherever you choose to keep it.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-copy" data-reveal>
+          <span class="feature-num">01</span>
+          <h3>What goes in</h3>
+          <p>Assistant context and memory, notes and markdown files, sensitive records, a backup of the family photo archive.</p>
+        </div>
+        <div class="stage tone-faience starry" data-reveal>
+          <div class="diagram">
+            <img class="diagram-bag" src="../img/backpack.svg" alt="">
+            <svg class="diagram-lines" viewBox="0 0 1000 90" preserveAspectRatio="none" aria-hidden="true"><path d="M500 0 C500 52 250 38 250 90"/><path d="M500 0 C500 52 750 38 750 90"/></svg>
+            <div class="contents">
+              <span>Assistant context and memory</span>
+              <span>Notes and markdown files</span>
+              <span>Sensitive records</span>
+              <span>A backup of the family photo archive</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature flip">
+        <div class="feature-copy" data-reveal>
+          <span class="feature-num">02</span>
+          <h3>Who can reach in</h3>
+          <p>Each app, model or agent gets only the access you grant it, scoped to what it needs, and you can take it back at any time.</p>
+        </div>
+        <div class="stage white" data-reveal>
+          <div class="access-head"><b>Who can reach in</b><span data-access-count>2 of 3</span></div>
+          <!-- data-access is the label shown while the switch is on -->
+          <div class="access-row" data-access="Can read Notes">
+            <div><b>Notes assistant</b><small>Can read Notes</small></div>
+            <button class="switch" type="button" role="switch" aria-checked="true" aria-label="Notes assistant access"></button>
+          </div>
+          <div class="access-row" data-access="Can add to the photo archive">
+            <div><b>Photo backup</b><small>Can add to the photo archive</small></div>
+            <button class="switch" type="button" role="switch" aria-checked="true" aria-label="Photo backup access"></button>
+          </div>
+          <div class="access-row off" data-access="Can read assistant memory">
+            <div><b>Calendar agent</b><small>No access</small></div>
+            <button class="switch" type="button" role="switch" aria-checked="false" aria-label="Calendar agent access"></button>
+          </div>
+          <p class="access-note">Try the switches. Access changes the moment you flip one.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-copy" data-reveal>
+          <span class="feature-num">03</span>
+          <h3>Take it anywhere</h3>
+          <p>Export it, import it elsewhere, sync it across servers you choose, or host it yourself at home or on-prem.</p>
+        </div>
+        <div class="stage tone-lapis starry" data-reveal>
+          <div class="diagram">
+            <img class="diagram-bag" src="../img/backpack.svg" alt="">
+            <svg class="diagram-lines" viewBox="0 0 1000 90" preserveAspectRatio="none" aria-hidden="true"><path d="M500 0 C500 52 167 38 167 90"/><path d="M500 0 V90"/><path d="M500 0 C500 52 833 38 833 90"/></svg>
+            <div class="places">
+              <div class="place">
+                <svg viewBox="0 0 80 80" aria-hidden="true"><path d="M14 40 L40 17 L66 40 V66 H14 Z" fill="#F4EEE2" stroke="#14162B" stroke-width="3" stroke-linejoin="round"/><path d="M8 44 L40 15 L72 44" fill="none" stroke="#14162B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="33" y="47" width="14" height="19" rx="2" fill="#D9A521" stroke="#14162B" stroke-width="2.5"/><rect x="20" y="46" width="9" height="9" rx="1.5" fill="#23408E"/><rect x="51" y="46" width="9" height="9" rx="1.5" fill="#23408E"/></svg>
+                <span>At home</span>
+              </div>
+              <div class="place">
+                <svg viewBox="0 0 80 80" aria-hidden="true"><rect x="18" y="12" width="44" height="56" rx="4" fill="#F4EEE2" stroke="#14162B" stroke-width="3"/><g fill="#137F7B"><rect x="25" y="20" width="9" height="8" rx="1.5"/><rect x="46" y="20" width="9" height="8" rx="1.5"/><rect x="25" y="34" width="9" height="8" rx="1.5"/><rect x="46" y="34" width="9" height="8" rx="1.5"/></g><rect x="34" y="50" width="12" height="18" rx="2" fill="#D9A521" stroke="#14162B" stroke-width="2.5"/><path d="M10 68 H70" stroke="#14162B" stroke-width="3" stroke-linecap="round"/></svg>
+                <span>On-prem</span>
+              </div>
+              <div class="place">
+                <svg viewBox="0 0 80 80" aria-hidden="true"><rect x="14" y="12" width="52" height="56" rx="8" fill="#F4EEE2" stroke="#14162B" stroke-width="3"/><rect x="22" y="21" width="36" height="10" rx="3" fill="#14162B"/><rect x="22" y="36" width="36" height="10" rx="3" fill="#14162B"/><rect x="22" y="51" width="36" height="10" rx="3" fill="#14162B"/><circle cx="51" cy="26" r="2.4" fill="#D9A521"/><circle cx="51" cy="41" r="2.4" fill="#137F7B"/><circle cx="51" cy="56" r="2.4" fill="#D9A521"/></svg>
+                <span>Servers you choose</span>
+              </div>
+            </div>
+            <div class="export-row">
+              <button class="mini-btn" type="button" data-export>Export my backpack</button>
+              <span class="wb-toast" data-export-toast role="status" aria-live="polite">Backpack exported</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PWS Spaces -->
+  <section class="sec papyrus" id="spaces">
+    <div class="wrap">
+      <div class="wb-head" data-reveal>
+        <p class="kicker">The storage</p>
+        <h2>PWS Spaces</h2>
+        <p class="wb-head-lead">Portable Web Spaces: where the contents of the backpack are kept.</p>
+        <p class="wb-head-desc">PWS is storage built on the Portable Web Spaces specification from the W3C Credentials Community Group. Each space belongs to its owner, and every app, model or agent only gets the access it was granted.</p>
+      </div>
+      <div class="cards3">
+        <article class="wb-card lift" data-reveal>
+          <div class="wb-card-art tone-faience starry">
+            <div class="tree" aria-hidden="true">
+              <div class="node">Personal space<span class="perm only">Yours</span></div>
+              <div class="node child">Notes<span class="perm">Assistant can read</span></div>
+              <div class="node child">Health records<span class="perm only">Only you</span></div>
+            </div>
+          </div>
+          <div class="wb-card-body"><h4>Spaces and Collections</h4><p>Organise data into Spaces and Collections, each with its own permissions</p></div>
+        </article>
+        <article class="wb-card lift" data-reveal>
+          <div class="wb-card-art tone-lapis starry">
+            <div class="mini-stack">
+              <div class="mini-card note" data-note><small>You see</small><div class="note-text">Trip planning: book the train to Alexandria for Friday.</div></div>
+              <button class="mini-btn" type="button" data-cipher aria-pressed="false">See what the server sees</button>
+            </div>
+          </div>
+          <div class="wb-card-body"><h4>Encrypted collections</h4><p>Encrypt collections so the server storing them can't read them</p></div>
+        </article>
+        <article class="wb-card lift" data-reveal>
+          <div class="wb-card-art tone-faience starry"><img class="art" src="../img/spaces.svg" alt=""></div>
+          <div class="wb-card-body"><h4>Export, import and sync</h4><p>Export a space and import it elsewhere, or sync it across servers you choose</p></div>
+        </article>
+      </div>
+      <div class="wb-tags"><span>Open source</span><span>Open standard</span><span>W3C CCG</span><span>Capability-based access</span><span>Self-hostable</span></div>
+      <div class="wb-links">
+        <a class="btn btn-primary" href="https://w3c-ccg.github.io/portable-web-spaces-spec/">Read the spec</a>
+        <a class="btn btn-ghost" href="https://github.com/interop-alliance/web-spaces-server">View the server code</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Freewallet -->
+  <section class="sec cream" id="freewallet">
+    <div class="wrap">
+      <div class="wb-head" data-reveal>
+        <p class="kicker">The keys</p>
+        <h2>Freewallet</h2>
+        <p class="wb-head-lead">A free, open-source wallet for the keys and permissions that open the backpack.</p>
+        <p class="wb-head-desc">Freewallet runs in your browser and keeps your keys on your side. There is no login server holding your account: you unlock it with a passkey or a passphrase, and from there you hand out exactly the access each app or AI agent needs.</p>
+      </div>
+      <div class="cards3">
+        <article class="wb-card lift" data-reveal>
+          <div class="wb-card-art tone-lapis starry"><img class="art" src="../img/wallet.svg" alt=""></div>
+          <div class="wb-card-body"><h4>Your keys, on your side</h4><p>Hold your DIDs, verifiable credentials and keys yourself, not on a platform</p></div>
+        </article>
+        <article class="wb-card lift" data-reveal>
+          <div class="wb-card-art tone-faience starry">
+            <div class="mini-stack">
+              <div class="mini-card grant" data-grant><b>Notes assistant</b><small>Read &middot; Notes &middot; scoped</small></div>
+              <button class="mini-btn" type="button" data-revoke>Revoke access</button>
+            </div>
+          </div>
+          <div class="wb-card-body"><h4>Scoped, revocable access</h4><p>Give an app or AI agent scoped, revocable access instead of handing over everything</p></div>
+        </article>
+        <article class="wb-card lift" data-reveal>
+          <div class="wb-card-art tone-lapis starry">
+            <div class="sync" aria-hidden="true">
+              <div class="sync-tile"><img class="art" src="../img/wallet.svg" alt=""></div>
+              <svg class="sync-arrow" viewBox="0 0 60 24"><path class="shaft" d="M2 12 H50"/><path d="M44 5 L54 12 L44 19"/></svg>
+              <div class="sync-tile"><img class="art" src="../img/spaces.svg" alt=""></div>
+            </div>
+          </div>
+          <div class="wb-card-body"><h4>Syncs to your spaces</h4><p>Syncs your wallet to PWS Spaces you choose</p></div>
+        </article>
+      </div>
+      <div class="wb-tags"><span>Open source</span><span>DIDs</span><span>Verifiable credentials</span><span>Passkeys</span><span>Capabilities (ZCAP)</span></div>
+      <div class="wb-links">
+        <a class="btn btn-primary" href="https://freewallet.me">Visit freewallet.me</a>
+        <a class="btn btn-ghost" href="https://github.com/interop-alliance/freewallet">View the code</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Open standards -->
+  <section class="standards">
+    <div class="wrap">
+      <div data-reveal>
+        <h2>Interop through open standards</h2>
+        <p>We take part in the standards these tools rest on, like Portable Web Spaces at the W3C Credentials Community Group, so projects from different teams can read and write the same data instead of each inventing a format.</p>
+      </div>
+      <div class="standards-chips" data-reveal><span>Portable Web Spaces</span><span>W3C CCG</span><span>DIDs</span><span>Verifiable credentials</span><span>Passkeys</span><span>Capabilities (ZCAP)</span></div>
+    </div>
+  </section>
+
+  <section class="next">
+    <div class="wrap">
+      <h2 data-reveal>See it in use</h2>
+      <div class="next-links">
+        <a class="btn btn-dark" href="../#adopters">Who is using our tech</a>
+        <a class="btn btn-ghost" href="../#people">Who's behind SetMaat</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="news">
+      <h2>Follow what we build</h2>
+      <p class="news-sub">Monthly letter: releases, standards news, learning circles.</p>
+      <form data-newsletter novalidate>
+        <label for="news-email">Email address</label>
+        <div class="news-row">
+          <input id="news-email" type="email" placeholder="you@example.com" autocomplete="email">
+          <button type="submit">Subscribe</button>
+        </div>
+      </form>
+      <p class="news-thanks" data-newsletter-thanks aria-live="polite"></p>
+    </div>
+    <div class="wordmark" aria-hidden="true"><img src="../img/logo-on-dark.svg" alt="">SetMaat</div>
+  </div>
+</footer>
+
+</body>
+</html>

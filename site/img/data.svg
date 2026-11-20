@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260">
+  <!-- What goes in the backpack: notes and records, a photo, and an assistant's spark -->
+  <rect x="128" y="44" width="150" height="186" rx="14" fill="#14162B"/>
+  <rect x="112" y="30" width="150" height="186" rx="14" fill="#F4EEE2" stroke="#14162B" stroke-width="3" transform="rotate(5 187 123)"/>
+  <rect x="96" y="28" width="150" height="186" rx="14" fill="#F4EEE2" stroke="#14162B" stroke-width="3"/>
+  <rect x="114" y="48" width="54" height="36" rx="6" fill="#D9A521"/>
+  <path d="M122 60h38M122 68h38M122 76h24" stroke="#14162B" stroke-width="2"/>
+  <path d="M114 104h112M114 124h112M114 144h76" stroke="#14162B" stroke-width="3" stroke-linecap="round"/>
+  <rect x="114" y="162" width="56" height="36" rx="5" fill="#137F7B" stroke="#14162B" stroke-width="3"/>
+  <path d="M118 194 L134 176 L146 188 L154 180 L166 194 Z" fill="#F4EEE2"/>
+  <circle cx="262" cy="58" r="30" fill="#23408E" stroke="#14162B" stroke-width="3"/>
+  <path d="M262 38 L266 54 L282 58 L266 62 L262 78 L258 62 L242 58 L258 54 Z" fill="#F4EEE2"/>
+  <rect x="196" y="176" width="96" height="40" rx="20" fill="#D9A521" stroke="#14162B" stroke-width="3"/>
+  <circle cx="218" cy="196" r="8" fill="#14162B"/>
+  <path d="M234 190h44M234 202h28" stroke="#14162B" stroke-width="3" stroke-linecap="round"/>
+</svg>

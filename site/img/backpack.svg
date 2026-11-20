@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- The backpack, open, with a credential card, a note and Maat's feather peeking out -->
+  <path d="M72 96 C 54 112 52 156 62 192" fill="none" stroke="#14162B" stroke-width="16" stroke-linecap="round"/>
+  <path d="M72 96 C 54 112 52 156 62 192" fill="none" stroke="#0E5F5C" stroke-width="9" stroke-linecap="round"/>
+  <path d="M168 96 C 186 112 188 156 178 192" fill="none" stroke="#14162B" stroke-width="16" stroke-linecap="round"/>
+  <path d="M168 96 C 186 112 188 156 178 192" fill="none" stroke="#0E5F5C" stroke-width="9" stroke-linecap="round"/>
+  <path d="M66 104 C66 62 90 46 120 46 C150 46 174 62 174 104 Z" fill="#0E5F5C" stroke="#14162B" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="rotate(-10 104 80)"><rect x="78" y="58" width="56" height="40" rx="6" fill="#F4EEE2" stroke="#14162B" stroke-width="3"/><rect x="86" y="66" width="16" height="12" rx="2" fill="#D9A521"/><path d="M86 86 H124" stroke="#23408E" stroke-width="4" stroke-linecap="round"/></g>
+  <g transform="rotate(9 140 78)"><rect x="124" y="52" width="38" height="50" rx="5" fill="#F4EEE2" stroke="#14162B" stroke-width="3"/><path d="M131 64 H155 M131 72 H155 M131 80 H147" stroke="#14162B" stroke-width="2.5" stroke-linecap="round"/></g>
+  <path d="M160 26 C 176 40 178 66 162 86 C 150 70 148 46 160 26 Z" fill="#D9A521" stroke="#14162B" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M160 32 L162 92" stroke="#14162B" stroke-width="2" stroke-linecap="round"/>
+  <path d="M60 100 Q120 116 180 100 V190 a16 16 0 0 1 -16 16 H76 a16 16 0 0 1 -16 -16 Z" fill="#137F7B" stroke="#14162B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="80" y="130" width="80" height="56" rx="14" fill="#17938E" stroke="#14162B" stroke-width="3"/>
+  <path d="M88 146 H152" stroke="#14162B" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="140" y="141" width="9" height="15" rx="2.5" fill="#D9A521" stroke="#14162B" stroke-width="2"/>
+</svg>
