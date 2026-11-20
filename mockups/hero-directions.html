@@ -1,0 +1,257 @@
+<title>SetMaat Hero Directions</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: a stacked review board — each hero mockup full-width, with a direction label and a plain-language read above it. */
+  :root {
+    /* Brand tokens, lifted from src/styles/global.css */
+    --papyrus: #F4EEE2;
+    --papyrus-2: #EAE1CF;
+    --ink: #14162B;
+    --ink-2: #3A3C52;
+    --lapis: #23408E;
+    --lapis-dark: #172C66;
+    --gold: #D9A521;
+    --faience: #137F7B;
+    --white: #FFFFFF;
+
+    /* Review-board chrome (separate from the brand, so the mockups read as samples) */
+    --page: #E7E2D6;
+    --panel: #FFFFFF;
+    --line: #CFC8B8;
+    --muted: #6A6656;
+    --head: #1E2033;
+
+    --display: 'Big Shoulders Display', Impact, sans-serif;
+    --body: Inter, system-ui, sans-serif;
+    --serif: 'Fraunces', Georgia, serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --page: #15161f;
+      --panel: #1d1f2b;
+      --line: #32354a;
+      --muted: #9a98ac;
+      --head: #ECEAF4;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --page: #15161f;
+    --panel: #1d1f2b;
+    --line: #32354a;
+    --muted: #9a98ac;
+    --head: #ECEAF4;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--head);
+    font-family: var(--body);
+    -webkit-font-smoothing: antialiased;
+  }
+  .shell {
+    max-width: 960px;
+    margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 40px 72px;
+  }
+
+  header.board { display: flex; flex-direction: column; gap: 10px; margin-bottom: 8px; }
+  header.board .kicker {
+    font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
+    font-weight: 700; color: var(--lapis);
+  }
+  :root[data-theme="dark"] header.board .kicker,
+  @media (prefers-color-scheme: dark) { }
+  header.board h1 {
+    font-family: var(--display); font-weight: 800; text-transform: uppercase;
+    letter-spacing: .01em; font-size: clamp(30px, 6vw, 46px); line-height: .95; margin: 0;
+    color: var(--head);
+  }
+  header.board p { margin: 0; max-width: 60ch; color: var(--muted); font-size: 15px; line-height: 1.6; }
+
+  .mock { display: flex; flex-direction: column; gap: 0; margin-top: 40px; }
+  .mock .meta {
+    display: flex; flex-direction: column; gap: 10px;
+    background: var(--panel); border: 1px solid var(--line); border-bottom: 0;
+    border-radius: 14px 14px 0 0; padding: 18px 20px;
+  }
+  .mock .meta .tag {
+    align-self: flex-start;
+    font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700;
+    color: var(--white); background: var(--ink); padding: 4px 10px; border-radius: 999px;
+  }
+  .mock .meta h2 { margin: 0; font-size: 19px; font-weight: 700; color: var(--head); }
+  .mock .meta .read { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 2px; }
+  @media (min-width: 620px) { .mock .meta .read { grid-template-columns: 1fr 1fr; } }
+  .mock .meta .read div { font-size: 13.5px; line-height: 1.55; color: var(--muted); }
+  .mock .meta .read b { color: var(--head); font-weight: 600; display: block; margin-bottom: 2px; letter-spacing: .02em; font-size: 12px; text-transform: uppercase; }
+
+  .frame {
+    border: 1px solid var(--line); border-radius: 0 0 14px 14px; overflow: hidden;
+    min-width: 0;
+  }
+
+  /* --- shared hero bits --- */
+  .hero { background: var(--papyrus); color: var(--ink); padding: 44px 36px; position: relative; }
+  .hero .lede { font-size: 16px; line-height: 1.6; color: var(--ink-2); max-width: 46ch; margin: 18px 0 0; }
+  .hero .ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .btn {
+    display: inline-flex; align-items: center; min-height: 42px; padding: 0 20px;
+    font-weight: 600; font-size: 14px; text-decoration: none; border: 2px solid var(--ink);
+    font-family: var(--body);
+  }
+  .btn-primary { background: var(--lapis); color: var(--white); border-color: var(--lapis); }
+  .btn-ghost { background: transparent; color: var(--ink); }
+  .pill-soft { border-radius: 10px; }
+
+  /* A — current (reference) */
+  .hA h3 {
+    font-family: var(--display); font-weight: 800; text-transform: uppercase;
+    font-size: clamp(38px, 8vw, 64px); line-height: .96; letter-spacing: .01em; margin: 0; color: var(--ink);
+  }
+  .hA .gold { color: var(--lapis); position: relative; white-space: nowrap; }
+  .hA .gold::after { content:""; position:absolute; left:-.03em; right:-.03em; bottom:.16em; height:.15em; background: var(--gold); z-index:0; }
+  .hA .gold span { position: relative; z-index: 1; }
+
+  /* B — warm & human */
+  .hB { background: linear-gradient(180deg, #FBF7EE 0%, var(--papyrus) 100%); }
+  .hB .eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--faience); font-weight: 700; margin: 0 0 14px; }
+  .hB h3 {
+    font-family: var(--serif); font-weight: 500; font-size: clamp(30px, 6.4vw, 52px);
+    line-height: 1.05; letter-spacing: -.01em; margin: 0; color: var(--ink); max-width: 16ch;
+  }
+  .hB h3 em { font-style: italic; color: var(--lapis); }
+  .hB .btn-primary { background: var(--faience); border-color: var(--faience); }
+
+  /* C — clarity / product-led */
+  .hC { display: grid; grid-template-columns: 1fr; gap: 28px; }
+  @media (min-width: 640px) { .hC { grid-template-columns: 1.1fr .9fr; align-items: center; } }
+  .hC .eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--lapis); font-weight: 700; margin: 0 0 12px; }
+  .hC h3 {
+    font-family: var(--display); font-weight: 800; text-transform: none;
+    font-size: clamp(30px, 5.6vw, 50px); line-height: 1.0; letter-spacing: .005em; margin: 0; color: var(--ink);
+  }
+  .hC .panel {
+    background: var(--lapis); color: var(--papyrus); border-radius: 14px; padding: 22px;
+    display: flex; flex-direction: column; gap: 10px; min-height: 160px; justify-content: center;
+  }
+  .hC .panel .k { font-family: var(--display); text-transform: uppercase; letter-spacing: .04em; color: var(--gold); font-weight: 800; font-size: 15px; }
+  .hC .panel .row { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+  .hC .panel .dot { width: 8px; height: 8px; border-radius: 999px; background: var(--gold); flex: 0 0 auto; }
+
+  /* D — bold, refined */
+  .hD h3 {
+    font-family: var(--display); font-weight: 800; text-transform: uppercase;
+    font-size: clamp(34px, 7vw, 58px); line-height: 1.0; letter-spacing: .005em; margin: 0; color: var(--ink);
+  }
+  .hD h3 .soft { display: block; color: var(--ink-2); font-weight: 700; }
+  .hD .rule { width: 56px; height: 4px; background: var(--gold); margin: 20px 0 0; }
+
+  .note { margin-top: 10px; font-size: 12.5px; color: var(--muted); }
+  footer.board { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; line-height: 1.6; }
+</style>
+
+<div class="shell">
+  <header class="board">
+    <span class="kicker">SetMaat · UX branch · hero exploration</span>
+    <h1>Four ways the hero could speak</h1>
+    <p>Same message — own your identity, own your data — in four different voices. The first is today's site for reference; the three below trade some of its loudness for warmth, clarity, or a more measured kind of boldness. Pick a direction and I'll build it live in the React app.</p>
+  </header>
+
+  <!-- A: current -->
+  <section class="mock">
+    <div class="meta">
+      <span class="tag">A · Current</span>
+      <h2>Loud, monumental, activist</h2>
+      <div class="read">
+        <div><b>Communicates</b>Conviction and defiance. Reads like a protest poster: principled, rooted in place, a movement more than a product.</div>
+        <div><b>Trade-off</b>All-caps display at this density can feel aggressive and leans industrial — less welcoming to non-technical visitors.</div>
+      </div>
+    </div>
+    <div class="frame">
+      <div class="hero hA">
+        <h3>Own your<br>identity.<br><span class="gold"><span>Own</span></span> your data.</h3>
+        <p class="lede">SetMaat is a non-profit cooperative from Cairo building open-source tools for digital identity and personal data.</p>
+        <div class="ctas"><a class="btn btn-primary" href="#">See our work</a><a class="btn btn-ghost" href="#">Why "SetMaat"?</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- B: warm -->
+  <section class="mock">
+    <div class="meta">
+      <span class="tag">B · Warm &amp; human</span>
+      <h2>Inviting, people-first, trustworthy</h2>
+      <div class="read">
+        <div><b>Communicates</b>Care and approachability. A soft serif in sentence case speaks to a person, not a crowd — closer to a trusted institution than a rally.</div>
+        <div><b>Levers</b>Fraunces serif, sentence case, generous line-height, a teal accent, benefit-led copy. Lapis/gold kept as highlights.</div>
+      </div>
+    </div>
+    <div class="frame">
+      <div class="hero hB">
+        <p class="eyebrow">A cooperative for your digital life</p>
+        <h3>Your identity and data should <em>belong to you.</em></h3>
+        <p class="lede">We're a non-profit co-op from Cairo building open tools that put your credentials, keys and storage back in your hands.</p>
+        <div class="ctas"><a class="btn btn-primary pill-soft" href="#">See what we build</a><a class="btn btn-ghost pill-soft" href="#">Meet the co-op</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- C: clarity -->
+  <section class="mock">
+    <div class="meta">
+      <span class="tag">C · Clarity-led</span>
+      <h2>Clear, confident, product-forward</h2>
+      <div class="read">
+        <div><b>Communicates</b>Competence and focus. Keeps the strong display face but drops the shouting — mixed case and a value panel make the offer legible fast.</div>
+        <div><b>Levers</b>Big Shoulders in sentence case at a calmer size, a two-column layout, a concrete "what you get" panel in lapis.</div>
+      </div>
+    </div>
+    <div class="frame">
+      <div class="hero hC">
+        <div>
+          <p class="eyebrow">Open-source digital identity</p>
+          <h3>Tools that keep your data in your hands.</h3>
+          <p class="lede">A wallet for your credentials and keys, and storage you control — all on open standards.</p>
+          <div class="ctas"><a class="btn btn-primary" href="#">See our work</a><a class="btn btn-ghost" href="#">How it works</a></div>
+        </div>
+        <div class="panel">
+          <div class="k">What you get</div>
+          <div class="row"><span class="dot"></span>A wallet for credentials &amp; keys</div>
+          <div class="row"><span class="dot"></span>Storage only you can open</div>
+          <div class="row"><span class="dot"></span>Built on open standards</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- D: bold refined -->
+  <section class="mock">
+    <div class="meta">
+      <span class="tag">D · Bold, refined</span>
+      <h2>Same energy, better rhythm</h2>
+      <div class="read">
+        <div><b>Communicates</b>Conviction without the shout. Keeps the poster voice but adds hierarchy and air, so it feels deliberate rather than aggressive.</div>
+        <div><b>Levers</b>Big Shoulders kept, looser line-height, a secondary line in softer ink, a single gold rule instead of a full highlighter.</div>
+      </div>
+    </div>
+    <div class="frame">
+      <div class="hero hD">
+        <h3>Own your data.<span class="soft">Own your future.</span></h3>
+        <div class="rule"></div>
+        <p class="lede">A non-profit cooperative from Cairo building open-source tools for digital identity and personal data.</p>
+        <div class="ctas"><a class="btn btn-primary" href="#">See our work</a><a class="btn btn-ghost" href="#">Why "SetMaat"?</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="board">
+    These are static mockups for comparison only — no code in the app has changed yet. Tell me which direction (or mix) feels right and I'll build it into <code>src/components/Hero.tsx</code> on the uxdesign branch so you can see it live with hot reload.
+  </footer>
+</div>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&display=swap">
