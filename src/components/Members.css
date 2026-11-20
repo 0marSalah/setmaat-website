@@ -4,8 +4,7 @@
    auto-fill keeps empty columns, so a lone advisor card stays the width of a founder card. */
 .people { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; margin-top: -16px }
 
-.member { background: var(--white); border: 2px solid var(--ink); display: flex; flex-direction: column; gap: 18px; transition: transform .15s ease, box-shadow .15s ease }
-.member:hover { transform: translate(-3px, -3px); box-shadow: 6px 6px 0 var(--lapis) }
+.member { background: var(--white); border: 2px solid var(--ink); display: flex; flex-direction: column; gap: 18px }
 
 /* Cartouche: the oval frame ancient Egyptians drew around names */
 .cartouche { flex: 0 0 auto; width: 84px; height: 112px; border: 3px solid var(--gold); border-radius: 42px; padding: 5px; position: relative; margin-bottom: 10px }
