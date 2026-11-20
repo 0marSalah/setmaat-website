@@ -7,7 +7,8 @@ export function Programs() {
     <section className="section" id="programs">
       <div className="wrap">
         <SectionHead title="What we do">
-          Three programs, chosen and funded by members. Everything we make is released openly.
+          Three programs, chosen and funded by members. Everything we make is released openly, for anyone to run,
+          adapt, fork and build on.
         </SectionHead>
         <div className="programs">
           {PROGRAMS.map((program, i) => (

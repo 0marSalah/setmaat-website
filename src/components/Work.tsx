@@ -1,5 +1,5 @@
 import type { ComponentType } from 'react'
-import { PROJECTS, type Project } from '../data/projects.ts'
+import { BACKPACK, PROJECTS, type Project } from '../data/projects.ts'
 import { SectionHead } from './SectionHead.tsx'
 import { SpacesArt, WalletArt } from './WorkArt.tsx'
 import './Work.css'
@@ -49,9 +49,26 @@ export function Work() {
     <section className="section" id="work">
       <div className="wrap">
         <SectionHead eyebrow="Our work" title="What we're building">
-          Open tools that put people in charge of their own data and identity. Built on open standards, so nothing
-          locks you in.
+          One product for AI that is sized to the people it serves, made of two open tools you can also use on
+          their own.
         </SectionHead>
+        <article className="backpack">
+          <div className="stars" aria-hidden="true" />
+          <div className="backpack-head">
+            <h3>{BACKPACK.title}</h3>
+            <p className="lead">{BACKPACK.lead}</p>
+            <p>{BACKPACK.description}</p>
+          </div>
+          <ul className="backpack-points">
+            {BACKPACK.points.map((point) => (
+              <li key={point.title}>
+                <h4>{point.title}</h4>
+                <p>{point.text}</p>
+              </li>
+            ))}
+          </ul>
+        </article>
+        <p className="eyebrow work-inside">What's inside</p>
         <div className="work-list">
           {PROJECTS.map((project) => (
             <ProjectCard key={project.title} project={project} />
