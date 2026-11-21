@@ -292,8 +292,9 @@ h1, h2, h3, h4, p { margin: 0 }
 .person img { width: 150px; height: 186px; margin: 10px 0 22px; object-fit: cover; border-radius: 50%; outline: 4px solid var(--gold); outline-offset: 6px; background: var(--papyrus-2) }
 /* A gold bar above the role */
 .person-role::before { content: ""; display: block; width: 120px; height: 6px; margin: 0 auto 22px; background: var(--gold) }
-.person-role { font-size: 13px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--lapis) }
+.person-role { min-height: calc(28px + 2.5em); line-height: 1.25; font-size: 13px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--lapis) }
 .person h4 { font-family: var(--display); font-weight: 800; font-size: clamp(26px, 2.6vw, 34px); line-height: 1; letter-spacing: .02em; text-transform: uppercase; color: var(--ink) }
+.person-place { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2) }
 .person p { max-width: 34ch; margin-top: 8px; font-size: 15px; line-height: 1.65; color: var(--ink-2) }
 
 /* ---------- What we're building page ---------- */
